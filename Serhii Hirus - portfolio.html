@@ -679,7 +679,7 @@
       width: 34px;
       height: 34px;
       border-radius: 50%;
-      background: var(--accent);
+      background: #0088cc;
       color: #fff;
       border: 0;
       cursor: pointer;
@@ -687,14 +687,14 @@
       align-items: center;
       justify-content: center;
       padding: 0;
-      box-shadow: 0 2px 8px rgba(255, 90, 31, .35);
+      box-shadow: 0 2px 8px rgba(0, 136, 204, .35);
       transition: all .2s cubic-bezier(.16, 1, .3, 1);
       flex-shrink: 0
     }
 
     .cmd-btn:hover {
-      background: #e84a10;
-      box-shadow: 0 4px 12px rgba(255, 90, 31, .45);
+      background: #0077b5;
+      box-shadow: 0 4px 12px rgba(0, 136, 204, .5);
       transform: scale(1.06)
     }
 
@@ -725,7 +725,7 @@
 
     .cmd-btn:focus-visible,
     .cmd-opt:focus-visible {
-      outline: 2px solid var(--accent);
+      outline: 2px solid #0088cc;
       outline-offset: 2px
     }
 
@@ -786,13 +786,13 @@
     }
 
     .cmd-opt:hover {
-      background: #fff5f1
+      background: #f0f8fd
     }
 
     .co-name {
       font-weight: 700;
       font-size: 13px;
-      color: var(--accent)
+      color: #0088cc
     }
 
     .co-desc {
@@ -816,20 +816,20 @@
       font-size: 13px
     }
 
-    @keyframes orPulse {
+    @keyframes tgPulse {
 
       0%,
       100% {
-        box-shadow: 0 2px 8px rgba(255, 90, 31, .35)
+        box-shadow: 0 2px 8px rgba(0, 136, 204, .35)
       }
 
       50% {
-        box-shadow: 0 2px 14px rgba(255, 90, 31, .6)
+        box-shadow: 0 2px 14px rgba(0, 136, 204, .65)
       }
     }
 
     .cmd-btn {
-      animation: orPulse 2.4s infinite ease-in-out
+      animation: tgPulse 2.4s infinite ease-in-out
     }
 
     @media (prefers-reduced-motion:reduce) {
@@ -1251,499 +1251,759 @@
       }
     }
 
-    .qlab {
+    /* Strategy Co-pilot (Minimalist AI Chat & Template Architect) */
+    .sc-app {
+      --accent: #dc2626;
       background: #ffffff;
-      border: 1px solid #d9dde3;
+      border: 1px solid #e2e8f0;
       border-radius: 6px;
-      min-height: 500px;
+      min-height: 520px;
       display: flex;
       flex-direction: column;
       position: relative;
       font: 400 13px/1.45 -apple-system, system-ui, sans-serif;
-      color: #1a1a1a;
-      overflow: hidden
+      color: #0f172a;
+      overflow: hidden;
     }
 
-    .ql-top {
+    .sc-top {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 16px;
-      border-bottom: 1px solid #e8eaee;
-      background: #f7f8fa;
-      gap: 12px;
-      flex-wrap: wrap
+      padding: 9px 16px;
+      border-bottom: 1px solid #edf0f3;
+      background: #fafbfc;
     }
 
-    .ql-brand {
+    .sc-brand {
       display: flex;
       align-items: center;
-      gap: 10px
+      gap: 10px;
     }
 
-    .ql-dots {
+    .sc-dots {
       display: flex;
       gap: 5px;
-      margin-right: 4px
     }
 
-    .ql-dot {
+    .sc-dot {
       width: 9px;
       height: 9px;
       border-radius: 50%;
-      display: inline-block
+      display: inline-block;
     }
 
-    .ql-dot.r {
-      background: #ff5f56
-    }
+    .sc-dot.r { background: #ff5f56; }
+    .sc-dot.y { background: #ffbd2e; }
+    .sc-dot.g { background: #27c93f; }
 
-    .ql-dot.y {
-      background: #ffbd2e
-    }
-
-    .ql-dot.g {
-      background: #27c93f
-    }
-
-    .ql-title {
+    .sc-title {
       font-size: 12.5px;
-      font-weight: 700;
-      color: #161616;
-      letter-spacing: -.01em;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace
-    }
-
-    .ql-title a {
-      color: inherit;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      transition: color .15s
-    }
-
-    .ql-title a:hover {
-      color: var(--accent)
-    }
-
-    .ql-title a svg {
-      opacity: .6;
-      transition: transform .15s, opacity .15s
-    }
-
-    .ql-title a:hover svg {
-      opacity: 1;
-      transform: translate(1px, -1px)
-    }
-
-    .ql-badges {
-      display: flex;
-      gap: 6px;
-      align-items: center;
-      flex-wrap: wrap
-    }
-
-    .ql-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 11px;
-      font-weight: 600;
-      padding: 2px 9px;
-      border-radius: 99px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace
-    }
-
-    .ql-badge.orange {
-      background: #fff5f0;
-      color: var(--accent);
-      border: 1px solid rgba(255, 90, 31, .25)
-    }
-
-    .ql-badge.blue {
-      background: #eff6ff;
-      color: #2563eb;
-      border: 1px solid #dbeafe
-    }
-
-    .ql-badge.purple {
-      background: #faf5ff;
-      color: #9333ea;
-      border: 1px solid #f3e8ff
-    }
-
-    .ql-vtabs {
-      display: inline-flex;
-      background: #eceef2;
-      border-radius: 6px;
-      padding: 2px;
-      gap: 2px
-    }
-
-    .ql-vtab {
-      background: transparent;
-      border: 0;
-      color: #64748b;
-      padding: 4px 12px;
-      font-size: 12px;
-      font-weight: 600;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: all .15s
-    }
-
-    .ql-vtab:hover {
-      color: #161616
-    }
-
-    .ql-vtab.active {
-      background: #ffffff;
-      color: #161616;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, .08)
-    }
-
-    .ql-presets {
+      color: #334155;
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 9px 16px;
-      background: #fafbfc;
-      border-bottom: 1px solid #edf0f3;
-      flex-wrap: wrap
     }
 
-    .ql-presets-lbl {
-      font-size: 11px;
+    .sc-title b {
+      color: #0f172a;
       font-weight: 600;
-      color: #8c95a0;
-      text-transform: uppercase;
-      letter-spacing: .03em;
-      white-space: nowrap
     }
 
-    .ql-pbtn {
-      background: #ffffff;
-      border: 1px solid #d9dde3;
-      color: #4b5563;
-      border-radius: 6px;
-      padding: 5px 12px;
-      font-size: 12px;
+    .sc-badge {
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 1px 7px;
+      border-radius: 4px;
+      background: #fef2f2;
+      color: var(--accent);
+      border: 1px solid rgba(220, 38, 38, .25);
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    .sc-reset-btn {
+      background: transparent;
+      border: 1px solid #e2e8f0;
+      color: #64748b;
+      padding: 4px 10px;
+      border-radius: 5px;
+      font-size: 11.5px;
       font-weight: 500;
       cursor: pointer;
-      white-space: nowrap;
-      transition: all .15s
-    }
-
-    .ql-pbtn:hover {
-      color: var(--accent);
-      border-color: var(--accent)
-    }
-
-    .ql-pbtn.active {
-      background: #fff5f0;
-      border-color: var(--accent);
-      color: var(--accent);
-      font-weight: 600;
-      box-shadow: 0 0 0 1px var(--accent)
-    }
-
-    .ql-body {
-      padding: 14px 16px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      background: #ffffff;
-      overflow-y: auto
-    }
-
-    .ql-stats {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 8px
-    }
-
-    .ql-scard {
-      background: #fafbfc;
-      border: 1px solid #e5e8eb;
-      border-radius: 8px;
-      padding: 9px 12px
-    }
-
-    .ql-slbl {
-      font-size: 10px;
-      font-weight: 600;
-      color: #7b8490;
-      text-transform: uppercase;
-      letter-spacing: .03em
-    }
-
-    .ql-sval {
-      font-size: 17px;
-      font-weight: 700;
-      color: #161616;
-      margin: 3px 0 1px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace
-    }
-
-    .ql-sval.pos {
-      color: var(--accent)
-    }
-
-    .ql-sval.dd {
-      color: #e11d48
-    }
-
-    .ql-ssub {
-      font-size: 10.5px;
-      color: #94a3b8
-    }
-
-    .ql-chart-box {
-      background: #ffffff;
-      border: 1px solid #e5e8eb;
-      border-radius: 8px;
-      padding: 12px 14px;
-      position: relative
-    }
-
-    .ql-chart-h {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 8px;
-      font-size: 11.5px;
-      color: #7b8490
-    }
-
-    .ql-chart-h b {
-      color: #161616
-    }
-
-    .ql-svg {
-      width: 100%;
-      height: 130px;
-      display: block;
-      overflow: visible
-    }
-
-    .ql-log {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 6px;
-      padding: 8px 12px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 11.5px;
-      color: #475569;
-      line-height: 1.5
-    }
-
-    .ql-log-line {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 3px
-    }
-
-    .ql-log-line:last-child {
-      margin-bottom: 0
-    }
-
-    .ql-log-ts {
-      color: #94a3b8;
-      flex-shrink: 0
-    }
-
-    .ql-log-tag {
-      color: var(--accent);
-      font-weight: 700;
-      flex-shrink: 0
-    }
-
-    .ql-log-tag.ok {
-      color: #16a34a
-    }
-
-    .ql-log-txt {
-      color: #334155
-    }
-
-    .ql-code-box {
-      background: #fafbfc;
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 14px 16px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 12px;
-      line-height: 1.6;
-      color: #1e293b;
-      overflow-x: auto;
-      overflow-y: auto;
-      max-height: 280px;
-      scrollbar-width: thin
-    }
-
-    .ql-code-box::-webkit-scrollbar {
-      width: 6px;
-      height: 6px
-    }
-
-    .ql-code-box::-webkit-scrollbar-thumb {
-      background: #cbd5e1;
-      border-radius: 3px
-    }
-
-    .ql-code-box pre {
-      margin: 0;
-      font-family: inherit
-    }
-
-    .ql-ast-bar {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 6px;
-      padding: 8px 12px;
-      font-size: 11.5px;
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      flex-wrap: wrap
-    }
-
-    .ql-ast-item {
       display: inline-flex;
       align-items: center;
       gap: 5px;
-      color: #334155
+      transition: all .15s;
     }
 
-    .ql-ast-item b {
+    .sc-reset-btn:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: #fef2f2;
+    }
+
+    /* Screen 1: Home / Template Architect */
+    .sc-home {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 24px 28px 18px;
+      background: #ffffff;
+      justify-content: space-between;
+    }
+
+    .sc-hero-content {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .sc-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      background: #fef2f2;
+      border: 1px solid rgba(220, 38, 38, .25);
+      padding: 3px 10px;
+      border-radius: 99px;
+      margin-bottom: 12px;
+      letter-spacing: .02em;
+    }
+
+    .sc-hero-title {
+      font-size: 24px;
+      font-weight: 800;
       color: #0f172a;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace
+      line-height: 1.25;
+      margin: 0 0 8px;
+      letter-spacing: -.02em;
     }
 
-    .ql-bot {
+    .sc-highlight {
+      color: var(--accent);
+    }
+
+    .sc-hero-sub {
+      font-size: 12.5px;
+      color: #64748b;
+      line-height: 1.5;
+      margin: 0 0 16px;
+      max-width: 520px;
+    }
+
+    .sc-anatomy-card {
+      background: #fafbfc;
+      border: 1px solid #edf0f3;
+      border-radius: 8px;
+      padding: 10px 14px;
+      width: 100%;
+      text-align: left;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .02);
+    }
+
+    .sc-anat-head {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10.5px;
+      color: #475569;
+      margin-bottom: 8px;
+      letter-spacing: .03em;
+    }
+
+    .sc-anat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .sc-anat-tag {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .sc-anat-item p {
+      font-size: 11px;
+      color: #64748b;
+      line-height: 1.35;
+      margin: 0;
+    }
+
+    /* Input Box */
+    .sc-input-box {
+      max-width: 640px;
+      width: 100%;
+      margin: 0 auto 16px;
+    }
+
+    .sc-input-wrap {
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 99px;
+      padding: 4px 6px 4px 16px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, .03);
+      transition: border-color .15s, box-shadow .15s;
+    }
+
+    .sc-input-wrap:focus-within {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, .15);
+    }
+
+    .sc-input-wrap input {
+      flex: 1;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      font-size: 12.5px;
+      color: #0f172a;
+    }
+
+    .sc-input-wrap input::placeholder {
+      color: #94a3b8;
+    }
+
+    .sc-input-wrap button {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 0;
+      color: #ffffff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .15s, transform .1s;
+      flex-shrink: 0;
+    }
+
+    .sc-input-wrap button:hover {
+      background: #b91c1c;
+      transform: scale(1.05);
+    }
+
+    /* Preset Cards */
+    .sc-presets-wrap {
+      max-width: 680px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .sc-presets-lbl {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #8c95a0;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      margin-bottom: 8px;
+    }
+
+    .sc-preset-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .sc-pcard {
+      background: #fafbfc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 10px 12px;
+      text-align: left;
+      cursor: pointer;
+      transition: all .15s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .sc-pcard:hover {
+      background: #ffffff;
+      border-color: var(--accent);
+      box-shadow: 0 3px 10px rgba(220, 38, 38, .1);
+      transform: translateY(-1px);
+    }
+
+    .sc-pcard-h {
+      font-size: 11px;
+      font-weight: 700;
+      color: #0f172a;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 10px 16px;
-      border-top: 1px solid #e8eaee;
-      background: #f7f8fa;
-      gap: 10px;
-      flex-wrap: wrap
+      margin-bottom: 5px;
+      letter-spacing: .01em;
     }
 
-    .ql-actions {
+    .sc-pcard:hover .sc-pcard-h b {
+      color: var(--accent);
+    }
+
+    .sc-arr {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .sc-pcard-p {
+      font-size: 11px;
+      color: #64748b;
+      line-height: 1.35;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* Screen 2: Chat View */
+    .sc-chat-view {
       display: flex;
-      gap: 8px;
-      align-items: center;
-      flex-wrap: wrap
+      flex-direction: column;
+      flex: 1;
+      height: 480px;
+      background: #fafbfc;
+      overflow: hidden;
     }
 
-    .ql-btn {
-      font: 600 12.5px -apple-system, system-ui, sans-serif;
+    .sc-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      scrollbar-width: thin;
+    }
+
+    .sc-messages::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    .sc-messages::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 3px;
+    }
+
+    .sc-msg {
+      display: flex;
+      gap: 10px;
+      max-width: 88%;
+      animation: scFadeIn .25s ease-out;
+    }
+
+    @keyframes scFadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .sc-msg.user {
+      align-self: flex-end;
+      flex-direction: row-reverse;
+    }
+
+    .sc-msg.ai {
+      align-self: flex-start;
+      max-width: 95%;
+    }
+
+    .sc-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+
+    .sc-msg.user .sc-avatar {
+      background: #e2e8f0;
+      color: #334155;
+    }
+
+    .sc-msg.ai .sc-avatar {
+      background: #fef2f2;
+      border: 1px solid rgba(220, 38, 38, .3);
+      color: var(--accent);
+    }
+
+    .sc-bubble {
       background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: #1e293b;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, .03);
+    }
+
+    .sc-msg.user .sc-bubble {
+      background: #fef2f2;
+      border-color: rgba(220, 38, 38, .25);
+      color: #0f172a;
+    }
+
+    .sc-msg-author {
+      font-size: 11px;
+      font-weight: 700;
+      color: #64748b;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .sc-msg.ai .sc-msg-author {
+      color: var(--accent);
+    }
+
+    /* Clarification Options inside AI message */
+    .sc-clarify-wrap {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .sc-opt-btn {
+      background: #fafbfc;
       border: 1px solid #d9dde3;
-      color: #1a1a1a;
+      border-radius: 6px;
+      padding: 8px 12px;
+      cursor: pointer;
+      text-align: left;
+      transition: all .15s;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .sc-opt-btn:hover {
+      border-color: var(--accent);
+      background: #ffffff;
+      box-shadow: 0 2px 6px rgba(220, 38, 38, .08);
+    }
+
+    .sc-opt-btn.selected {
+      border-color: var(--accent);
+      background: #fef2f2;
+      box-shadow: 0 0 0 1px var(--accent);
+    }
+
+    .sc-opt-btn-radio {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 1.5px solid #94a3b8;
+      margin-top: 2px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sc-opt-btn.selected .sc-opt-btn-radio {
+      border-color: var(--accent);
+    }
+
+    .sc-opt-btn.selected .sc-opt-btn-radio::after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .sc-opt-btn-body {
+      flex: 1;
+    }
+
+    .sc-opt-btn-title {
+      font-weight: 600;
+      font-size: 12px;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .sc-opt-btn-desc {
+      font-size: 11px;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    .sc-custom-input-row {
+      display: flex;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .sc-custom-input-row input {
+      flex: 1;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 6px 10px;
+      font-size: 11.5px;
+      outline: 0;
+      background: #ffffff;
+    }
+
+    .sc-custom-input-row input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(220, 38, 38, .15);
+    }
+
+    .sc-custom-input-row button {
+      background: var(--accent);
+      border: 0;
+      color: #ffffff;
+      font-size: 11.5px;
+      font-weight: 600;
+      border-radius: 6px;
+      padding: 0 12px;
+      cursor: pointer;
+      transition: background .15s;
+    }
+
+    .sc-custom-input-row button:hover {
+      background: #b91c1c;
+    }
+
+    /* Typing Dots Animation */
+    .sc-typing {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: #64748b;
+      font-size: 11.5px;
+      padding: 2px 4px;
+    }
+
+    .sc-typing-dots {
+      display: inline-flex;
+      gap: 4px;
+    }
+
+    .sc-typing-dots span {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+      animation: scBounce 1.2s infinite ease-in-out both;
+    }
+
+    .sc-typing-dots span:nth-child(1) { animation-delay: -0.32s; }
+    .sc-typing-dots span:nth-child(2) { animation-delay: -0.16s; }
+
+    @keyframes scBounce {
+      0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+      40% { transform: scale(1.1); opacity: 1; }
+    }
+
+    .sc-step-badge {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: var(--accent);
+      background: #fef2f2;
+      border: 1px solid rgba(220, 38, 38, .25);
+      border-radius: 4px;
+      padding: 2px 7px;
+      display: inline-block;
+      margin-bottom: 7px;
+    }
+
+    /* Blueprint Card in Chat */
+    .sc-blueprint-card {
+      margin-top: 10px;
+      margin-bottom: 12px;
+      background: #fafbfc;
+      border: 1px solid #e2e8f0;
+      border-left: 3px solid var(--accent);
+      border-radius: 6px;
+      padding: 10px 14px;
+      font-size: 11.5px;
+      line-height: 1.5;
+    }
+
+    .sc-bp-h {
+      font-size: 12px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .sc-bp-sec {
+      margin-top: 6px;
+    }
+
+    .sc-bp-sec b {
+      color: var(--accent);
+      display: block;
+      font-size: 11px;
+      margin-bottom: 2px;
+    }
+
+    .sc-bp-sec p {
+      margin: 0;
+      color: #475569;
+    }
+
+    /* Code Block in Chat */
+    .sc-code-container {
+      margin-top: 10px;
+      background: #0f172a;
       border-radius: 8px;
-      padding: 7px 14px;
+      border: 1px solid #1e293b;
+      overflow: hidden;
+    }
+
+    .sc-code-h {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 7px 12px;
+      background: #1e293b;
+      color: #94a3b8;
+      font-size: 11px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    .sc-code-h-status {
+      color: #4ade80;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .sc-copy-btn {
+      background: transparent;
+      border: 1px solid #334155;
+      color: #cbd5e1;
+      padding: 3px 9px;
+      border-radius: 4px;
+      font-size: 10.5px;
+      cursor: pointer;
+      transition: all .15s;
+    }
+
+    .sc-copy-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .sc-code-body {
+      padding: 12px;
+      margin: 0;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 11.5px;
+      line-height: 1.55;
+      color: #f1f5f9;
+      overflow-x: auto;
+      max-height: 250px;
+      scrollbar-width: thin;
+    }
+
+    .sc-code-body::-webkit-scrollbar {
+      width: 4px;
+      height: 4px;
+    }
+
+    .sc-code-body::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 2px;
+    }
+
+    .sc-chat-reset-wrap {
+      margin-top: 12px;
+      text-align: right;
+    }
+
+    .sc-chat-restart-btn {
+      background: #ffffff;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 11.5px;
+      font-weight: 600;
+      border-radius: 6px;
+      padding: 5px 12px;
       cursor: pointer;
       transition: all .15s;
       display: inline-flex;
       align-items: center;
-      gap: 6px
+      gap: 5px;
     }
 
-    .ql-btn:hover {
-      background: #f1f3f5;
-      color: #000
+    .sc-chat-restart-btn:hover {
+      background: #fef2f2;
+      transform: translateY(-1px);
     }
 
-    .ql-btn.primary {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: #ffffff
-    }
-
-    .ql-btn.primary:hover {
-      background: #e84a10
-    }
-
-    .ql-btn:disabled {
-      opacity: .6;
-      cursor: default
-    }
-
-    .ql-status-txt {
-      font-size: 11.5px;
-      color: #7b8490;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace
-    }
-
-    .ql-toast {
+    .sc-toast {
       position: absolute;
       left: 50%;
-      bottom: 60px;
+      bottom: 20px;
       transform: translate(-50%, 15px);
-      background: #161616;
+      background: #0f172a;
       color: #ffffff;
-      border: 1px solid #2a2a2a;
-      border-radius: 8px;
-      padding: 9px 16px;
-      font-size: 12.5px;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      padding: 7px 14px;
+      font-size: 12px;
       opacity: 0;
       pointer-events: none;
       transition: opacity .25s, transform .25s;
       z-index: 10;
       text-align: center;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, .15)
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .2);
     }
 
-    .ql-toast.show {
+    .sc-toast.show {
       opacity: 1;
-      transform: translate(-50%, 0)
+      transform: translate(-50%, 0);
     }
 
-    .syn-k {
-      color: #cf222e;
-      font-weight: 600
-    }
+    .syn-k { color: #ff7b72; font-weight: 600; }
+    .syn-f { color: #d2a8ff; font-weight: 600; }
+    .syn-s { color: #a5d6ff; }
+    .syn-c { color: #8b949e; font-style: italic; }
+    .syn-n { color: #79c0ff; font-weight: 600; }
+    .syn-p { color: #ffa657; }
 
-    .syn-f {
-      color: #8250df;
-      font-weight: 600
-    }
-
-    .syn-s {
-      color: #0a3069
-    }
-
-    .syn-c {
-      color: #6e7781;
-      font-style: italic
-    }
-
-    .syn-n {
-      color: #0550ae;
-      font-weight: 600
-    }
-
-    .syn-p {
-      color: #953800
-    }
-
-    @media (max-width:860px) {
-      .ql-stats {
-        grid-template-columns: repeat(2, 1fr)
+    @media (max-width: 860px) {
+      .sc-anat-grid,
+      .sc-preset-cards {
+        grid-template-columns: 1fr;
+        gap: 8px;
       }
 
-      .ql-stats .ql-scard:last-child {
-        grid-column: 1/-1
+      .sc-home {
+        padding: 16px 14px;
       }
 
-      .ql-top {
-        flex-direction: column;
-        align-items: flex-start
+      .sc-hero-title {
+        font-size: 20px;
       }
     }
 
@@ -1761,7 +2021,8 @@
       border-bottom: 2px solid transparent;
       color: var(--muted);
       padding: 4px 0;
-      cursor: pointer
+      cursor: pointer;
+      transition: color .15s, border-color .15s
     }
 
     .tabs button[aria-selected="true"] {
@@ -1773,6 +2034,103 @@
     .ar:focus-visible {
       outline: 3px solid var(--accent);
       outline-offset: 3px
+    }
+
+    /* Distinct Brand Theming for Interactive Applications Only */
+    /* 1. AI Strategy Co-pilot (Tech Red inside .sc-app) */
+    .p3-project-ref {
+      margin: 8px 0 0;
+      font-size: 14px;
+      color: var(--muted);
+      display: block;
+      line-height: 1.5;
+    }
+    .p3-project-ref a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      font-weight: 500;
+      transition: color .15s;
+    }
+    .p3-project-ref a:hover {
+      color: var(--accent);
+    }
+    .sl-copilot .p3 p code {
+      color: var(--ink);
+      background: #f3f5f8;
+      border: 1px solid #e1e4e8;
+      padding: 1px 4px;
+      border-radius: 4px;
+    }
+
+    /* 2. Automated Content Creator (Telegram Blue inside .ph) */
+    .sl-content .ph {
+      --accent: #0088cc;
+    }
+    .sl-content .av svg {
+      stroke: #0088cc;
+    }
+    .sl-content .av circle {
+      fill: #0088cc;
+    }
+    .sl-content .cmd-btn {
+      background: #0088cc;
+      box-shadow: 0 2px 8px rgba(0, 136, 204, .35);
+    }
+    .sl-content .cmd-btn:hover {
+      background: #0077b5;
+      box-shadow: 0 4px 12px rgba(0, 136, 204, .45);
+    }
+    .sl-content .cmd-btn:focus-visible,
+    .sl-content .cmd-opt:focus-visible {
+      outline: 2px solid #0088cc;
+    }
+    .sl-content .co-name {
+      color: #0088cc;
+    }
+    .sl-content .kb button.pub {
+      background: #0088cc;
+    }
+    .sl-content .kb button:focus-visible {
+      outline: 2px solid #0088cc;
+    }
+    .sl-content .prog i {
+      background: #0088cc;
+    }
+    .sl-content .b.me {
+      background: #0088cc;
+    }
+
+    /* 3. AI-copilot для CRM (Emerald Green inside .crm) */
+    .sl-crm .crm {
+      --accent: #059669;
+    }
+    .sl-crm .ab.pr {
+      background: #059669;
+      border-color: #059669;
+    }
+    .sl-crm .ab.pr:hover {
+      background: #047857;
+      border-color: #047857;
+    }
+    .sl-crm .ab:focus-visible,
+    .sl-crm .lead:focus-visible {
+      outline: 2px solid #059669;
+    }
+    .sl-crm .lead.on {
+      border-color: #059669;
+      box-shadow: 0 0 0 1px #059669;
+    }
+    .sl-crm .sc2.hi {
+      background: #d1fae5;
+      color: #065f46;
+    }
+    .sl-crm .mc button.ab.pr {
+      background: #059669;
+      border-color: #059669;
+    }
+    .sl-crm .prog i {
+      background: #059669 !important;
     }
 
     .car {
@@ -1798,7 +2156,8 @@
     .sl {
       flex: 0 0 100%;
       min-width: 0;
-      padding: 24px 0 48px
+      padding: 24px 0 48px;
+      overflow: hidden;
     }
 
     .sl .p2 {
@@ -2077,15 +2436,136 @@
       <h2 data-i18n="case_h2">Проекты и технические решения</h2>
       <p class="muted" data-i18n="case_sub">Рабочие интерактивные демо. Можно протестировать логику систем, нажимая
         кнопки прямо в интерфейсах.</p>
-      <div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-i18n="tab_p1">Automated Content
-          Creator</button><button role="tab" aria-selected="false" data-i18n="tab_p3">Квантовая торговая
-          лаборатория</button><button role="tab" aria-selected="false" data-i18n="tab_p2">AI-copilot для CRM</button>
+      <div class="tabs" role="tablist"><button role="tab" aria-selected="true" data-i18n="tab_p3">AI Strategy
+          Co-pilot</button><button role="tab" aria-selected="false" data-i18n="tab_p1">Automated Content
+          Creator</button><button role="tab" aria-selected="false" data-i18n="tab_p2">AI-copilot для CRM</button>
       </div>
       <div class="car">
         <button class="ar" id="pv" aria-label="Предыдущий проект">←</button>
         <div class="vp" id="vp">
           <div class="tr" id="tr">
-            <div class="sl">
+            <div class="sl sl-copilot">
+              <div class="p2">
+                <h3 data-i18n="h3_p3">AI Strategy Co-pilot (Специализированный ИИ-агент)</h3>
+                <small>Python · Claude API · AST Validation · VectorBT · Pandas / NumPy · FastAPI</small>
+                <div class="p3-project-ref" data-i18n-html="p3_ref">Данный агент реализован в моем личном проекте <a href="https://hirus.systems" target="_blank" rel="noopener">hirus.systems ↗</a></div>
+                <div class="p3">
+                  <div><b data-i18n="p3_t1">Инженерная задача</b>
+                    <p data-i18n-html="p3_d1">Трансформация неструктурированных гипотез в
+                      <b>строго верифицированные спецификации квант-стратегий</b>. Базовые LLM галлюцинируют несуществующими
+                      методами и молча пропускают критические параметры риска (цену Stop-Loss, лимитные уровни входа, правила отмены ордеров).
+                    </p>
+                  </div>
+                  <div><b data-i18n="p3_t2">Архитектура и реализация</b>
+                    <p data-i18n-html="p3_d2">Специализированный агент на <b>Claude API (Anthropic)</b> со <b>строгой верификацией спецификаций</b>.
+                      Проводит диалог по чеклисту пробелов, формирует понятную <b>структурированную спецификацию</b> и компилирует верифицированный код с
+                      <b>AST-валидацией</b> (контроль импортов, векторный расчет сигналов, защита от заглядывания в будущее).
+                    </p>
+                  </div>
+                  <div><b data-i18n="p3_t3">Результат</b>
+                    <p data-i18n-html="p3_d3"><b>100% покрытие обязательных параметров риска</b> до запуска симуляции;
+                      устранение логических неоднозначностей на этапе диалога; сокращение времени от сырой идеи до
+                      готовой спецификации с <b>часов до &lt; 30 секунд</b>.</p>
+                  </div>
+                </div>
+                <div class="mac">
+                  <div class="mac-in">
+                    <div class="lid">
+                      <div class="sc-app" id="scApp">
+                        <div class="sc-top">
+                          <div class="sc-brand">
+                            <div class="sc-dots">
+                              <span class="sc-dot r"></span>
+                              <span class="sc-dot y"></span>
+                              <span class="sc-dot g"></span>
+                            </div>
+                            <div class="sc-title">
+                              <b>Strategy Co-pilot</b>
+                            </div>
+                          </div>
+                          <button class="sc-reset-btn" id="scResetTopBtn" type="button">
+                            <span>↻</span> <span data-i18n="sc_btn_new">Новая стратегия</span>
+                          </button>
+                        </div>
+
+                        <!-- Screen 1: Home / Template Architect -->
+                        <div class="sc-home" id="scHome">
+                          <div class="sc-hero-content">
+                            <div class="sc-chip">
+                              <span aria-hidden="true">✨</span> <span data-i18n="sc_chip">СПЕЦИАЛИЗИРОВАННЫЙ ИИ-АГЕНТ</span>
+                            </div>
+                            <h4 class="sc-hero-title">
+                              <span data-i18n="sc_hero_t1">Спроектируйте </span><span class="sc-highlight" data-i18n="sc_hero_t2">квант-стратегию</span>
+                            </h4>
+                            <p class="sc-hero-sub" data-i18n="sc_hero_sub">
+                              Превращайте размытые гипотезы в строго верифицированные алгоритмические спецификации. Агент находит упущенные параметры риска и уточняет детали перед генерацией кода.
+                            </p>
+
+                            <div class="sc-anatomy-card">
+                              <div class="sc-anat-head">
+                                <span aria-hidden="true">⚡</span> <b data-i18n="sc_anat_head">АНАТОМИЯ НАДЕЖНОЙ СТРАТЕГИИ</b>
+                              </div>
+                              <div class="sc-anat-grid">
+                                <div class="sc-anat-item">
+                                  <span class="sc-anat-tag" data-i18n="sc_anat_1_t">1. ТОЧКА ВХОДА</span>
+                                  <p data-i18n="sc_anat_1_d">Рыночное условие, сессионный тайминг и подтверждение структуры.</p>
+                                </div>
+                                <div class="sc-anat-item">
+                                  <span class="sc-anat-tag" data-i18n="sc_anat_2_t">2. РИСК И СТОП-ЛОСС</span>
+                                  <p data-i18n="sc_anat_2_d">Защитный стоп, динамический ATR или структурная отмена.</p>
+                                </div>
+                                <div class="sc-anat-item">
+                                  <span class="sc-anat-tag" data-i18n="sc_anat_3_t">3. ВЫХОД И ТЕЙК</span>
+                                  <p data-i18n="sc_anat_3_d">Математический R:R таргет или выход по истощению импульса.</p>
+                                </div>
+                              </div>
+                            </div>
+
+                            <form class="sc-input-box" id="scInputForm" onsubmit="return false;">
+                              <div class="sc-input-wrap">
+                                <input type="text" id="scPromptInput" autocomplete="off" placeholder="Опишите торговую гипотезу (например: пробой азиатского диапазона на золоте)..." data-i18n-ph="sc_in_ph" />
+                                <button type="submit" id="scSendBtn" aria-label="Send Prompt">➔</button>
+                              </div>
+                            </form>
+                          </div>
+
+                          <div class="sc-presets-wrap">
+                            <div class="sc-presets-lbl" data-i18n="sc_presets_lbl">Или выберите готовый шаблон:</div>
+                            <div class="sc-preset-cards" id="scPresetCards">
+                              <div class="sc-pcard" data-preset="0" role="button" tabindex="0">
+                                <div class="sc-pcard-h"><b>LIQUIDITY SWEEP &amp; BOS</b> <span class="sc-arr">➔</span></div>
+                                <div class="sc-pcard-p" data-i18n="sc_p0_desc">XAU/USD · M15. Снятие ликвидности азиатской сессии со сломом структуры (BOS).</div>
+                              </div>
+                              <div class="sc-pcard" data-preset="1" role="button" tabindex="0">
+                                <div class="sc-pcard-h"><b>FVG MITIGATION SETUP</b> <span class="sc-arr">➔</span></div>
+                                <div class="sc-pcard-p" data-i18n="sc_p1_desc">EUR/USD · M5. Тест зоны дисбаланса (Fair Value Gap) по тренду H1.</div>
+                              </div>
+                              <div class="sc-pcard" data-preset="2" role="button" tabindex="0">
+                                <div class="sc-pcard-h"><b>SESSION RANGE BREAKOUT</b> <span class="sc-arr">➔</span></div>
+                                <div class="sc-pcard-p" data-i18n="sc_p2_desc">GBP/JPY · M15. Импульсный пробой диапазона на открытии Лондона.</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Screen 2: Chat View -->
+                        <div class="sc-chat-view" id="scChatView" style="display:none;">
+                          <div class="sc-messages" id="scMessages" aria-live="polite"></div>
+                        </div>
+
+                        <!-- Notification Toast -->
+                        <div class="sc-toast" id="scToast" role="status"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="lip"></div>
+                </div>
+              </div>
+              <p class="note" style="text-align:center" data-i18n-html="p3_note">Интерактивное демо моделирует работу
+                специализированного ИИ-агента: введите гипотезу или выберите шаблон, ответьте на уточняющий вопрос по
+                стоп-лоссу и получите чистый исполняемый код стратегии.</p>
+            </div>
+            <div class="sl sl-content">
               <div class="case">
                 <div>
                   <h3>Automated Content Creator</h3>
@@ -2151,174 +2631,10 @@
                 </div>
               </div>
             </div>
-            <div class="sl">
-              <div class="p2">
-                <h3 data-i18n-html="h3_p3">Квантовая торговая лаборатория (<a href="https://hirus.systems"
-                    target="_blank" rel="noopener">hirus.systems <svg width="14" height="14" viewBox="0 0 24 24"
-                      fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"
-                      stroke-linejoin="round">
-                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                      <polyline points="15 3 21 3 21 9" />
-                      <line x1="10" y1="14" x2="21" y2="3" />
-                    </svg></a>)</h3>
-                <small>Python · Vertex AI · VectorBT · Optuna · Neon PostgreSQL · React 19</small>
-                <div class="p3">
-                  <div><b data-i18n="p3_t1">Инженерная задача</b>
-                    <p data-i18n-html="p3_d1">Трансформация неструктурированных торговых гипотез с естественного языка в
-                      <b>математически верифицированные алгоритмические стратегии</b> с автоматическим <b>out-of-sample
-                        бэктестингом</b> и защитой от переобучения.
-                    </p>
-                  </div>
-                  <div><b data-i18n="p3_t2">Архитектура и реализация</b>
-                    <p data-i18n-html="p3_d2">Тюнинг <b>Vertex AI</b> с <b>Context Caching на 35.4k токенов</b> под API
-                      VectorBT; <b>статический анализ Python AST</b> (<code>ast.parse</code>) для валидации синтаксиса
-                      до запуска; <b>автоматический цикл самолечения (self-healing)</b>; асинхронный бэкенд на
-                      <b>FastAPI</b> с векторизованной симуляцией на <b>VectorBT</b> и байесовской оптимизацией в
-                      <b>Optuna</b>.
-                    </p>
-                  </div>
-                  <div><b data-i18n="p3_t3">Результат</b>
-                    <p data-i18n-html="p3_d3">Генерация, верификация синтаксиса и бэктест квант-стратегии за <b>&lt; 3
-                        секунд</b> (ускорение в 4 раза благодаря context caching); <b>100% валидный исполняемый код</b>
-                      через AST-фильтрацию; сквозной цикл от гипотезы до <b>Walk-Forward анализа</b>.</p>
-                  </div>
-                </div>
-                <div class="mac">
-                  <div class="mac-in">
-                    <div class="lid">
-                      <div class="qlab" id="qlab">
-                        <div class="ql-top">
-                          <div class="ql-brand">
-                            <div class="ql-dots"><span class="ql-dot r"></span><span class="ql-dot y"></span><span
-                                class="ql-dot g"></span></div>
-                            <div class="ql-title"><a href="https://hirus.systems" target="_blank" rel="noopener"
-                                title="Открыть hirus.systems">hirus.systems <svg width="11" height="11"
-                                  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
-                                  stroke-linecap="round" stroke-linejoin="round">
-                                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                                  <polyline points="15 3 21 3 21 9" />
-                                  <line x1="10" y1="14" x2="21" y2="3" />
-                                </svg></a></div>
-                          </div>
-                          <div class="ql-vtabs" role="tablist">
-                            <button class="ql-vtab active" id="qlTabTearsheet" type="button" role="tab"
-                              aria-selected="true" data-i18n="ql_tab_tear">Tearsheet (VectorBT)</button>
-                            <button class="ql-vtab" id="qlTabCode" type="button" role="tab" aria-selected="false"
-                              data-i18n="ql_tab_code">Код Vertex AI и AST</button>
-                          </div>
-                        </div>
-                        <div class="ql-presets">
-                          <span class="ql-presets-lbl" data-i18n="ql_hypo">Торговые гипотезы (сгенерировано Vertex
-                            AI):</span>
-                          <button class="ql-pbtn active" type="button" data-preset="0">ICT Liquidity Sweep + BOS
-                            (EUR/USD)</button>
-                          <button class="ql-pbtn" type="button" data-preset="1">FVG Imbalance Reversal
-                            (GBP/USD)</button>
-                          <button class="ql-pbtn" type="button" data-preset="2">London Breakout Momentum
-                            (XAU/USD)</button>
-                        </div>
-                        <div class="ql-body">
-                          <div id="qlViewTearsheet">
-                            <div class="ql-stats">
-                              <div class="ql-scard">
-                                <div class="ql-slbl" data-i18n="ql_metric_net">Чистая прибыль</div>
-                                <div class="ql-sval pos" id="qlValNet">+148.4%</div>
-                                <div class="ql-ssub">Total Return</div>
-                              </div>
-                              <div class="ql-scard">
-                                <div class="ql-slbl" data-i18n="ql_metric_sharpe">Коэффициент Шарпа</div>
-                                <div class="ql-sval" id="qlValSharpe">2.34</div>
-                                <div class="ql-ssub">Annualized</div>
-                              </div>
-                              <div class="ql-scard">
-                                <div class="ql-slbl" data-i18n="ql_metric_win">Винрейт</div>
-                                <div class="ql-sval" id="qlValWin">68.2%</div>
-                                <div class="ql-ssub" id="qlValTrades">142 сделки</div>
-                              </div>
-                              <div class="ql-scard">
-                                <div class="ql-slbl" data-i18n="ql_metric_pf">Профит-фактор</div>
-                                <div class="ql-sval" id="qlValPF">2.15</div>
-                                <div class="ql-ssub">Gross Win/Loss</div>
-                              </div>
-                              <div class="ql-scard">
-                                <div class="ql-slbl" data-i18n="ql_metric_dd">Макс. просадка</div>
-                                <div class="ql-sval dd" id="qlValDD">-6.8%</div>
-                                <div class="ql-ssub">Low Tail Risk</div>
-                              </div>
-                            </div>
-                            <div class="ql-chart-box">
-                              <div class="ql-chart-h">
-                                <div><b id="qlChartPair">EUR/USD M15</b> · Equity Growth vs Baseline · VectorBT</div>
-                                <div id="qlChartStats">Trades: 142 · Fee: 0.0001 · Slippage: 0.5 pip</div>
-                              </div>
-                              <svg class="ql-svg" viewBox="0 0 600 130" id="qlSvg">
-                                <defs>
-                                  <linearGradient id="qlGrad" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stop-color="#ff5a1f" stop-opacity="0.16" />
-                                    <stop offset="100%" stop-color="#ff5a1f" stop-opacity="0.0" />
-                                  </linearGradient>
-                                </defs>
-                                <line x1="0" y1="20" x2="600" y2="20" stroke="#f1f3f5" stroke-dasharray="3 3" />
-                                <line x1="0" y1="55" x2="600" y2="55" stroke="#f1f3f5" stroke-dasharray="3 3" />
-                                <line x1="0" y1="90" x2="600" y2="90" stroke="#f1f3f5" stroke-dasharray="3 3" />
-                                <line x1="0" y1="120" x2="600" y2="120" stroke="#e2e8f0" />
-                                <path id="qlArea" fill="url(#qlGrad)"
-                                  d="M 10 120 C 60 115, 90 105, 130 90 S 190 95, 230 75 S 290 60, 340 65 S 400 45, 450 35 S 530 25, 590 15 L 590 120 L 10 120 Z" />
-                                <path id="qlLine" fill="none" stroke="#ff5a1f" stroke-width="2.4" stroke-linecap="round"
-                                  d="M 10 120 C 60 115, 90 105, 130 90 S 190 95, 230 75 S 290 60, 340 65 S 400 45, 450 35 S 530 25, 590 15" />
-                                <g id="qlMarkers"></g>
-                              </svg>
-                            </div>
-                            <div class="ql-log" id="qlLog">
-                              <div class="ql-log-line"><span class="ql-log-ts">[11:04:12]</span><span
-                                  class="ql-log-tag">VERTEX-AI</span><span class="ql-log-txt">Context cache HIT (35,420
-                                  tokens) · System prompt & VectorBT API schema ready · Latency: 320ms</span></div>
-                              <div class="ql-log-line"><span class="ql-log-ts">[11:04:13]</span><span
-                                  class="ql-log-tag ok">AST-GUARD</span><span class="ql-log-txt">ast.parse() passed · 0
-                                  forbidden calls (eval/exec blocked) · Target: vbt.Portfolio.from_signals</span></div>
-                              <div class="ql-log-line"><span class="ql-log-ts">[11:04:13]</span><span
-                                  class="ql-log-tag ok">VECTORBT</span><span class="ql-log-txt">1,480 bars simulated in
-                                  12ms · Sharpe 2.34 · Win Rate 68.2% · Overfitting test: PASSED</span></div>
-                            </div>
-                          </div>
-                          <div id="qlViewCode" hidden>
-                            <div class="ql-code-box">
-                              <pre id="qlCodeContent"></pre>
-                            </div>
-                            <div class="ql-ast-bar" id="qlAstBar">
-                              <span class="ql-ast-item"><span style="color:#3fb950">✓</span> <b>ast.FunctionDef</b>:
-                                generate_signals</span>
-                              <span class="ql-ast-item"><span style="color:#3fb950">✓</span> <b>ast.Call</b>:
-                                vbt.Portfolio.from_signals</span>
-                              <span class="ql-ast-item"><span style="color:#3fb950">✓</span> <b>RiskModel</b>:
-                                sl_stop=1.5%, tp_stop=3.5%</span>
-                              <span class="ql-ast-item"><span style="color:#38bdf8">⚡</span> <b>Self-Healing</b>:
-                                100-bar test passed</span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="ql-bot">
-                          <div class="ql-actions">
-                            <button class="ql-btn primary" id="qlBtnRun" type="button" data-i18n="ql_btn_run">⚡
-                              Запустить симуляцию (VectorBT)</button>
-                          </div>
-                        </div>
-                        <div class="ql-toast" id="qlToast" role="status"></div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="lip"></div>
-                </div>
-              </div>
-              <p class="note" style="text-align:center" data-i18n-html="p3_note">Интерактивное демо моделирует работу <a
-                  href="https://hirus.systems" target="_blank" rel="noopener"
-                  style="color:var(--accent);text-decoration:underline">hirus.systems</a>: выберите пресет
-                квант-стратегии, запустите симуляцию VectorBT или изучите сгенерированный Vertex AI код.</p>
-            </div>
-            <div class="sl">
+            <div class="sl sl-crm">
               <div class="p2">
                 <h3 data-i18n="tab_p2">AI-copilot для CRM</h3>
-                <small>Python · FastAPI · Gemini · Apollo API · HubSpot / Pipedrive · n8n · PostgreSQL</small>
+                <small>Python · FastAPI · Claude · Apollo API · HubSpot / Pipedrive · n8n · PostgreSQL</small>
                 <div class="p3">
                   <div><b data-i18n="p2_t1">Инженерная задача</b>
                     <p data-i18n-html="p2_d1">Устранить <b>ручной сбор данных</b> о компаниях перед встречами и
@@ -2566,26 +2882,38 @@
           crm_b1: "Generate follow-up & proposal",
           crm_b2: "Sync with CRM",
           crm_b3: "Recalculate AI score",
-          tab_p3: "AI Quant Trading Lab",
-          h3_p3: "AI Quant Trading Lab (<a href=\"https://hirus.systems\" target=\"_blank\" rel=\"noopener\">hirus.systems <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"/><polyline points=\"15 3 21 3 21 9\"/><line x1=\"10\" y1=\"14\" x2=\"21\" y2=\"3\"/></svg></a>)",
+          tab_p3: "AI Strategy Co-pilot",
+          h3_p3: "AI Strategy Co-pilot (Domain-Specific AI Agent)",
+          p3_ref: 'This agent is implemented in my personal project <a href="https://hirus.systems" target="_blank" rel="noopener">hirus.systems ↗</a>',
           p3_t1: "Engineering Challenge",
-          p3_d1: "Transforming unstructured natural-language trading hypotheses into <b>mathematically verified algorithmic strategies</b> with automated <b>out-of-sample backtesting</b> and zero overfitting.",
-          p3_t2: "Architecture & Vertex AI Tuning",
-          p3_d2: "Fine-tuned <b>Vertex AI</b> with <b>35.4k token Context Caching</b> for VectorBT APIs; <b>Python AST static analysis</b> (<code>ast.parse</code>) to validate syntax before execution; <b>automated self-healing loop</b>; high-throughput <b>FastAPI</b> async engine with <b>VectorBT</b> simulation and <b>Optuna</b> Bayesian hyperopt.",
-          p3_t3: "Impact & Quantitative Results",
-          p3_d3: "End-to-end strategy generation, syntax verification, and backtesting in <b>&lt; 3 seconds</b> (4x faster via context caching); <b>100% syntactically valid executable code</b> through AST gating; full research pipeline with <b>Walk-Forward Analysis</b> and live metrics.",
-          p3_note: "The interactive demo below models <a href=\"https://hirus.systems\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--accent);text-decoration:underline\">hirus.systems</a>: select a quant strategy preset, run the VectorBT simulation, or inspect the generated Vertex AI code.",
-          ql_tab_tear: "Tearsheet (VectorBT)",
-          ql_tab_code: "Vertex AI Code & AST",
-          ql_hypo: "Strategy Hypotheses (AI Generated):",
-          ql_metric_net: "Net Profit",
-          ql_metric_sharpe: "Sharpe Ratio",
-          ql_metric_win: "Win Rate",
-          ql_metric_pf: "Profit Factor",
-          ql_metric_dd: "Max Drawdown",
-          ql_btn_run: "⚡ Run Backtest (VectorBT)",
-          ql_btn_ast: "🔍 Inspect AST Tree",
-          ql_btn_opt: "🎯 Optuna Tuning",
+          p3_d1: "Transforming vague trading hypotheses into <b>strictly verified algorithmic specifications</b>. Base LLMs hallucinate methods and silently omit critical risk controls (exact Stop-Loss levels, limit order boundaries, trade invalidation rules).",
+          p3_t2: "Architecture & Socratic Clarification",
+          p3_d2: "Multi-turn agent on <b>Claude API (Anthropic)</b> enforcing <b>strict schema validation</b>. Conducts Socratic clarification on missing risk parameters, produces a human-readable <b>strategy specification</b>, and compiles verified Python code with <b>AST validation</b> (secure imports, vectorized signal logic, zero look-ahead bias).",
+          p3_t3: "Impact & Reliability",
+          p3_d3: "<b>100% risk parameter coverage</b> enforced before code execution; eliminates costly logic ambiguities during dialogue; reduces time from raw trader idea to backtest-ready specification from <b>hours to &lt; 30 seconds</b>.",
+          p3_note: 'Interactive demo models the specialized AI agent implemented in my personal project <a href="https://hirus.systems" target="_blank" rel="noopener"><b>hirus.systems</b></a>: submit an idea or select a template, complete the clarification flow, and inspect the verified Python strategy code.',
+          sc_btn_new: "New Strategy",
+          sc_chip: "DOMAIN-SPECIFIC AI AGENT",
+          sc_hero_t1: "Architect a ",
+          sc_hero_t2: "High-Quality Strategy",
+          sc_hero_sub: "Transform ambiguous trading hypotheses into strictly verified algorithmic specifications. The agent spots missing risk guards and clarifies parameters before execution.",
+          sc_anat_head: "ANATOMY OF A HIGH-QUALITY STRATEGY",
+          sc_anat_1_t: "1. ENTRY TRIGGER",
+          sc_anat_1_d: "Clear market condition, session timing & structural confirmation.",
+          sc_anat_2_t: "2. RISK & STOP-LOSS",
+          sc_anat_2_d: "Protective stop level, dynamic ATR or structural invalidation.",
+          sc_anat_3_t: "3. EXIT & TAKE-PROFIT",
+          sc_anat_3_d: "Mathematical risk-to-reward target or momentum exhaustion exit.",
+          sc_in_ph: "Describe your trading strategy idea (e.g. Asian session breakout on Gold)...",
+          sc_presets_lbl: "Or start from verified templates:",
+          sc_p0_desc: "XAU/USD · M15. Asian session liquidity sweep with Market Structure Shift.",
+          sc_p1_desc: "EUR/USD · M5. Retest of Fair Value Gap in direction of higher timeframe H1 trend.",
+          sc_p2_desc: "GBP/JPY · M15. Volatility expansion breakout at London market open.",
+          sc_btn_copy: "Copy Code",
+          sc_btn_copied: "Copied!",
+          sc_btn_restart: "↻ Architect Another Strategy",
+          sc_custom_btn: "Apply",
+          sc_custom_ph: "Or enter your own stop-loss (e.g. 2x ATR)...",
           stack_h2: "Technical Stack",
           stack_sub: "Technologies and tools applied in production engineering and projects.",
           stack_c1: "Languages & Backend",
@@ -2679,26 +3007,38 @@
           crm_b1: "Згенерувати follow-up та КП",
           crm_b2: "Синхронізувати з CRM",
           crm_b3: "Перерахувати AI-скоринг",
-          tab_p3: "Квантова торгова лабораторія",
-          h3_p3: "Квантова торгова лабораторія (<a href=\"https://hirus.systems\" target=\"_blank\" rel=\"noopener\">hirus.systems <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"/><polyline points=\"15 3 21 3 21 9\"/><line x1=\"10\" y1=\"14\" x2=\"21\" y2=\"3\"/></svg></a>)",
+          tab_p3: "AI Strategy Co-pilot",
+          h3_p3: "AI Strategy Co-pilot (Спеціалізований ШІ-агент)",
+          p3_ref: 'Цей агент реалізований у моєму особистому проєкті <a href="https://hirus.systems" target="_blank" rel="noopener">hirus.systems ↗</a>',
           p3_t1: "Інженерне завдання",
-          p3_d1: "Трансформація неструктурованих торгових гіпотез із природної мови в <b>математично верифіковані алгоритмічні стратегії</b> з автоматичним <b>тестуванням out-of-sample</b> та захистом від оверфітингу.",
-          p3_t2: "Архітектура та тюнінг Vertex AI",
-          p3_d2: "Тюнінг <b>Vertex AI</b> із <b>Context Caching на 35.4k токенів</b> для VectorBT API; <b>статичний аналіз Python AST</b> (<code>ast.parse</code>) для валідації синтаксису до запуску; <b>автоматичний цикл самолікування (self-healing)</b>; асинхронний бекенд на <b>FastAPI</b> з векторизованою симуляцією у <b>VectorBT</b> та оптимізацією в <b>Optuna</b>.",
-          p3_t3: "Результат та ефективність",
-          p3_d3: "Генерація, верифікація синтаксису та бэктест квант-стратегії за <b>&lt; 3 секунд</b> (прискорення у 4 рази завдяки context caching); <b>100% валідний виконуваний код</b> через AST-фільтрацію; наскрізний цикл від гіпотези до <b>Walk-Forward аналізу</b>.",
-          p3_note: "Інтерактивне демо моделює роботу <a href=\"https://hirus.systems\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--accent);text-decoration:underline\">hirus.systems</a>: оберіть пресет квант-стратегії, запустіть симуляцію VectorBT або огляньте згенерований Vertex AI код.",
-          ql_tab_tear: "Tearsheet (VectorBT)",
-          ql_tab_code: "Код Vertex AI та AST",
-          ql_hypo: "Торгові гіпотези (згенеровано Vertex AI):",
-          ql_metric_net: "Чистий прибуток",
-          ql_metric_sharpe: "Коефіцієнт Шарпа",
-          ql_metric_win: "Вінрейт",
-          ql_metric_pf: "Профіт-фактор",
-          ql_metric_dd: "Макс. просадка",
-          ql_btn_run: "⚡ Запустити симуляцію (VectorBT)",
-          ql_btn_ast: "🔍 Інспекція дерева AST",
-          ql_btn_opt: "🎯 Оптимізація Optuna",
+          p3_d1: "Трансформація неструктурованих гіпотез у <b>суворо верифіковані квант-специфікації</b>. Базові LLM галюцинують неіснуючими методами та мовчки пропускають критичні параметри ризику (ціну Stop-Loss, лімітні рівні входу, правила скасування ордерів).",
+          p3_t2: "Архітектура та Socratic Clarification",
+          p3_d2: "Спеціалізований агент на <b>Claude API (Anthropic)</b> зі <b>суворою валідацією специфікацій</b>. Проводить діалог за чеклистом пропусків, формує зрозумілу <b>структуровану специфікацію</b> та компілює верифікований код із <b>AST-валідацією</b> (контроль імпортів, векторний розрахунок сигналів, захист від заглядання вперед).",
+          p3_t3: "Результат та надійність",
+          p3_d3: "<b>100% покриття обов'язкових параметрів ризику</b> до запуску симуляції; усунення логічних помилок на етапі діалогу; прискорення шляху від сирої ідеї до готової специфікації з <b>годин до &lt; 30 секунд</b>.",
+          p3_note: 'Інтерактивне демо моделює роботу спеціалізованого ШІ-агента, реалізованого в моєму особистому проєкті <a href="https://hirus.systems" target="_blank" rel="noopener"><b>hirus.systems</b></a>: введіть гіпотезу або оберіть шаблон, пройдіть уточнюючий діалог та отримайте верифікований код стратегії.',
+          sc_btn_new: "Нова стратегія",
+          sc_chip: "СПЕЦІАЛІЗОВАНИЙ ШІ-АГЕНТ",
+          sc_hero_t1: "Спроєктуйте ",
+          sc_hero_t2: "квант-стратегію",
+          sc_hero_sub: "Перетворюйте розмиті гіпотези на суворо верифіковані алгоритмічні специфікації. Агент знаходить пропущені параметри ризику та уточнює деталі перед генерацією коду.",
+          sc_anat_head: "АНАТОМІЯ НАДІЙНОЇ СТРАТЕГІЇ",
+          sc_anat_1_t: "1. ТОЧКА ВХОДУ",
+          sc_anat_1_d: "Ринкова умова, сесійний таймінг та підтвердження структури.",
+          sc_anat_2_t: "2. РИЗИК І СТОП-ЛОСС",
+          sc_anat_2_d: "Захисний стоп, динамічний ATR або структурне скасування.",
+          sc_anat_3_t: "3. ВИХІД І ТЕЙК",
+          sc_anat_3_d: "Математичний R:R таргет або вихід за виснаженням імпульсу.",
+          sc_in_ph: "Опишіть торгову гіпотезу (наприклад: пробій азіатського діапазону на золоті)...",
+          sc_presets_lbl: "Або оберіть готовий шаблон:",
+          sc_p0_desc: "XAU/USD · M15. Зняття ліквідності азіатської сесії зі зломом структури (BOS).",
+          sc_p1_desc: "EUR/USD · M5. Тест зони дисбалансу (Fair Value Gap) за трендом H1.",
+          sc_p2_desc: "GBP/JPY · M15. Імпульсний пробій діапазону на відкритті Лондона.",
+          sc_btn_copy: "Скопіювати код",
+          sc_btn_copied: "Скопійовано!",
+          sc_btn_restart: "↻ Спроєктувати нову стратегію",
+          sc_custom_btn: "Застосувати",
+          sc_custom_ph: "Або введіть свій варіант стоп-лосу (наприклад: 2x ATR)...",
           stack_h2: "Технічний стек",
           stack_sub: "Технології та інструменти, що використовуються в комерційній розробці та проєктах.",
           stack_c1: "Мови та бекенд",
@@ -2792,26 +3132,38 @@
           crm_b1: "Сгенерировать follow-up и КП",
           crm_b2: "Синхронизировать с CRM",
           crm_b3: "Пересчитать AI-скоринг",
-          tab_p3: "Квантовая торговая лаборатория",
-          h3_p3: "Квантовая торговая лаборатория (<a href=\"https://hirus.systems\" target=\"_blank\" rel=\"noopener\">hirus.systems <svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"/><polyline points=\"15 3 21 3 21 9\"/><line x1=\"10\" y1=\"14\" x2=\"21\" y2=\"3\"/></svg></a>)",
+          tab_p3: "AI Strategy Co-pilot",
+          h3_p3: "AI Strategy Co-pilot (Специализированный ИИ-агент)",
+          p3_ref: 'Данный агент реализован в моем личном проекте <a href="https://hirus.systems" target="_blank" rel="noopener">hirus.systems ↗</a>',
           p3_t1: "Инженерная задача",
-          p3_d1: "Трансформация неструктурированных торговых гипотез с естественного языка в <b>математически верифицированные алгоритмические стратегии</b> с автоматическим <b>out-of-sample бэктестингом</b> и защитой от переобучения.",
-          p3_t2: "Архитектура и тюнинг Vertex AI",
-          p3_d2: "Тюнинг <b>Vertex AI</b> с <b>Context Caching на 35.4k токенов</b> под API VectorBT; <b>статический анализ Python AST</b> (<code>ast.parse</code>) для валидации синтаксиса до запуска; <b>автоматический цикл самолечения (self-healing)</b>; асинхронный бэкенд на <b>FastAPI</b> с векторизованной симуляцией на <b>VectorBT</b> и байесовской оптимизацией в <b>Optuna</b>.",
-          p3_t3: "Результат и эффективность",
-          p3_d3: "Генерация, верификация синтаксиса и бэктест квант-стратегии за <b>&lt; 3 секунд</b> (ускорение в 4 раза благодаря context caching); <b>100% валидный исполняемый код</b> через AST-фильтрацию; сквозной цикл от гипотезы до <b>Walk-Forward анализа</b>.",
-          p3_note: "Интерактивное демо моделирует работу <a href=\"https://hirus.systems\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--accent);text-decoration:underline\">hirus.systems</a>: выберите пресет квант-стратегии, запустите симуляцию VectorBT или изучите сгенерированный Vertex AI код.",
-          ql_tab_tear: "Tearsheet (VectorBT)",
-          ql_tab_code: "Код Vertex AI и AST",
-          ql_hypo: "Торговые гипотезы (сгенерировано Vertex AI):",
-          ql_metric_net: "Чистая прибыль",
-          ql_metric_sharpe: "Коэффициент Шарпа",
-          ql_metric_win: "Винрейт",
-          ql_metric_pf: "Профит-фактор",
-          ql_metric_dd: "Макс. просадка",
-          ql_btn_run: "⚡ Запустить симуляцию (VectorBT)",
-          ql_btn_ast: "🔍 Инспекция дерева AST",
-          ql_btn_opt: "🎯 Оптимизация Optuna",
+          p3_d1: "Трансформация неструктурированных гипотез в <b>строго верифицированные спецификации квант-стратегий</b>. Базовые LLM галлюцинируют несуществующими методами и молча пропускают критические параметры риска (цену Stop-Loss, лимитные уровни входа, правила отмены ордеров).",
+          p3_t2: "Архитектура и Socratic Clarification",
+          p3_d2: "Специализированный агент на <b>Claude API (Anthropic)</b> со <b>строгой верификацией спецификаций</b>. Проводит диалог по чеклисту пробелов, формирует понятную <b>структурированную спецификацию</b> и компилирует верифицированный код с <b>AST-валидацией</b> (контроль импортов, векторный расчет сигналов, защита от заглядывания в будущее).",
+          p3_t3: "Результат и надежность",
+          p3_d3: "<b>100% покрытие обязательных параметров риска</b> до запуска симуляции; устранение логических неоднозначностей на этапе диалога; сокращение времени от сырой идеи до готовой спецификации с <b>часов до &lt; 30 секунд</b>.",
+          p3_note: 'Интерактивное демо моделирует работу специализированного ИИ-агента, реализованного в моем личном проекте <a href="https://hirus.systems" target="_blank" rel="noopener"><b>hirus.systems</b></a>: введите гипотезу или выберите шаблон, пройдите уточняющий диалог и получите чистый верифицированный код стратегии.',
+          sc_btn_new: "Новая стратегия",
+          sc_chip: "СПЕЦИАЛИЗИРОВАННЫЙ ИИ-АГЕНТ",
+          sc_hero_t1: "Спроектируйте ",
+          sc_hero_t2: "квант-стратегию",
+          sc_hero_sub: "Превращайте размытые гипотезы в строго верифицированные алгоритмические спецификации. Агент находит упущенные параметры риска и уточняет детали перед генерацией кода.",
+          sc_anat_head: "АНАТОМИЯ НАДЕЖНОЙ СТРАТЕГИИ",
+          sc_anat_1_t: "1. ТОЧКА ВХОДА",
+          sc_anat_1_d: "Рыночное условие, сессионный тайминг и подтверждение структуры.",
+          sc_anat_2_t: "2. РИСК И СТОП-ЛОСС",
+          sc_anat_2_d: "Защитный стоп, динамический ATR или структурная отмена.",
+          sc_anat_3_t: "3. ВЫХОД И ТЕЙК",
+          sc_anat_3_d: "Математический R:R таргет или выход по истощению импульса.",
+          sc_in_ph: "Опишите торговую гипотезу (например: пробой азиатского диапазона на золоте)...",
+          sc_presets_lbl: "Или выберите готовый шаблон:",
+          sc_p0_desc: "XAU/USD · M15. Снятие ликвидности азиатской сессии со сломом структуры (BOS).",
+          sc_p1_desc: "EUR/USD · M5. Тест зоны дисбаланса (Fair Value Gap) по тренду H1.",
+          sc_p2_desc: "GBP/JPY · M15. Импульсный пробой диапазона на открытии Лондона.",
+          sc_btn_copy: "Скопировать код",
+          sc_btn_copied: "Скопировано!",
+          sc_btn_restart: "↻ Спроектировать новую стратегию",
+          sc_custom_btn: "Применить",
+          sc_custom_ph: "Или введите свой вариант стоп-лосса (например: 2x ATR)...",
           stack_h2: "Технический стек",
           stack_sub: "Технологии и инструменты, используемые в коммерческой разработке и проектах.",
           stack_c1: "Языки и бэкенд",
@@ -2868,6 +3220,10 @@
         document.querySelectorAll('[data-i18n-html]').forEach(el => {
           const k = el.getAttribute('data-i18n-html');
           if (d[k] !== undefined) el.innerHTML = d[k];
+        });
+        document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+          const k = el.getAttribute('data-i18n-ph');
+          if (d[k] !== undefined) el.setAttribute('placeholder', d[k]);
         });
 
         window.__langListeners.forEach(fn => fn(lang));
@@ -3681,383 +4037,1181 @@
       draw();
     })();
   </script>
-  <script>
-    (() => {
-      const PRESETS = [
+      <script>
+(() => {
+  const PRESETS = [
+    {
+      id: 0,
+      title: 'LIQUIDITY SWEEP & BOS',
+      pair: 'XAU/USD · M15',
+      prompt: {
+        en: 'I want to trade Asian session liquidity sweeps on Gold (XAU/USD M15). Buy long when price sweeps the Asian low and confirms a bullish Market Structure Shift (BOS).',
+        ua: 'Хочу торгувати зняття ліквідності азіатської сесії на золоті (XAU/USD M15). Входити в лонг, коли ціна знімає азіатський лой і підтверджує бичачий злам структури (BOS).',
+        ru: 'Хочу торговать снятие ликвидности азиатской сессии на золоте (XAU/USD M15). Входить в лонг, когда цена снимает азиатский лой и подтверждает бычий слом структуры (BOS).'
+      },
+      steps: [
         {
-          id: 0,
-          name: 'ICT Liquidity Sweep + BOS (EUR/USD)',
-          pair: 'EUR/USD M15',
-          stats: { net: '+148.4%', sharpe: '2.34', win: '68.2%', trades: '142', pf: '2.15', dd: '-6.8%' },
-          chartStats: {
-            en: 'Trades: 142 · Fee: 0.0001 · Slippage: 0.5 pip',
-            ua: 'Угод: 142 · Комісія: 0.0001 · Прослизання: 0.5 pip',
-            ru: 'Сделок: 142 · Комиссия: 0.0001 · Проскальзывание: 0.5 pip'
+          stepNum: 1,
+          badge: { en: 'STEP 1 OF 3 · RISK BOUNDARY', ua: 'КРОК 1 З 3 · ЗАХИСНИЙ РИЗИК-ПРОФІЛЬ', ru: 'ШАГ 1 ИЗ 3 · ЗАЩИТНЫЙ РИСК-ПРОФИЛЬ' },
+          question: {
+            en: 'Hypothesis registered! The specification is missing an exact <b>Stop-Loss calculation formula</b>. On volatile Gold (XAU/USD), trading without a defined stop risks rapid liquidation.<br><br><b>Where would you like to anchor the Stop-Loss price level?</b>',
+            ua: 'Гіпотезу зафіксовано! У специфікації відсутній точний розрахунок рівня <b>Stop-Loss</b>. На волатильному золоті торгівля без стопу веде до швидкої ліквідації.<br><br><b>Де саме зафіксуємо ціновий рівень Stop-Loss?</b>',
+            ru: 'Гипотеза зарегистрирована! В спецификации отсутствует точный расчет уровня <b>Stop-Loss</b>. На волатильном золоте торговля без стопа грозит быстрой ликвидацией.<br><br><b>Где именно зафиксируем ценовой уровень Stop-Loss?</b>'
           },
-          dLine: 'M 10 120 C 60 115, 90 105, 130 90 S 190 95, 230 75 S 290 60, 340 65 S 400 45, 450 35 S 530 25, 590 15',
-          dArea: 'M 10 120 C 60 115, 90 105, 130 90 S 190 95, 230 75 S 290 60, 340 65 S 400 45, 450 35 S 530 25, 590 15 L 590 120 L 10 120 Z',
-          markers: [
-            { cx: 130, cy: 90, color: '#3fb950' },
-            { cx: 230, cy: 75, color: '#3fb950' },
-            { cx: 340, cy: 65, color: '#e3b341' },
-            { cx: 450, cy: 35, color: '#3fb950' },
-            { cx: 590, cy: 15, color: '#58a6ff' }
-          ],
-          astItems: [
-            { key: 'ast.FunctionDef', val: 'generate_signals' },
-            { key: 'ast.Call', val: 'vbt.Portfolio.from_signals' },
-            { key: 'RiskModel', val: 'sl_stop=1.5%, tp_stop=3.5%' },
-            { key: 'Self-Healing', val: '100-bar test passed' }
-          ],
-          logs: {
-            en: [
-              { ts: '[11:04:12]', tag: 'VERTEX-AI', ok: false, txt: 'Prompt: "ICT Asian range sweep + 15m BOS confirmation" · Context cache HIT (35,420 tokens) · 320ms' },
-              { ts: '[11:04:13]', tag: 'AST-GUARD', ok: true, txt: 'ast.parse() passed · Verified: roll_high, sweep_high, bos_bearish · 0 forbidden ops' },
-              { ts: '[11:04:13]', tag: 'VECTORBT', ok: true, txt: '1,480 bars EUR/USD M15 simulated in 12ms · Sharpe 2.34 · Win Rate 68.2% · Overfitting: PASSED' }
-            ],
-            ua: [
-              { ts: '[11:04:12]', tag: 'VERTEX-AI', ok: false, txt: 'Промпт: "ICT зняття ліквідності Asian range + BOS 15m" · Context cache HIT (35,420 токенів) · 320мс' },
-              { ts: '[11:04:13]', tag: 'AST-GUARD', ok: true, txt: 'ast.parse() пройдено · Перевірено: roll_high, sweep_high, bos_bearish · 0 заборонених викликів' },
-              { ts: '[11:04:13]', tag: 'VECTORBT', ok: true, txt: '1,480 барів EUR/USD M15 змодельовано за 12мс · Шарп 2.34 · Вінрейт 68.2% · Overfitting: PASSED' }
-            ],
-            ru: [
-              { ts: '[11:04:12]', tag: 'VERTEX-AI', ok: false, txt: 'Промпт: "ICT снятие ликвидности Asian range + BOS 15m" · Context cache HIT (35,420 токенов) · 320мс' },
-              { ts: '[11:04:13]', tag: 'AST-GUARD', ok: true, txt: 'ast.parse() пройден · Проверено: roll_high, sweep_high, bos_bearish · 0 запрещенных вызовов' },
-              { ts: '[11:04:13]', tag: 'VECTORBT', ok: true, txt: '1,480 баров EUR/USD M15 смоделировано за 12мс · Шарп 2.34 · Винрейт 68.2% · Overfitting: PASSED' }
-            ]
-          },
-          code:
-            `<span class="syn-c"># Generated by Vertex AI · Context Cache HIT (35.4k tokens)</span>
-<span class="syn-c"># AST Status: Verified (ast.parse OK, 0 forbidden calls, strict schema)</span>
-<span class="syn-k">import</span> vectorbt <span class="syn-k">as</span> vbt
-<span class="syn-k">import</span> numpy <span class="syn-k">as</span> np
-
-<span class="syn-k">def</span> <span class="syn-f">generate_signals</span>(df, <span class="syn-p">sweep_window</span>=<span class="syn-n">20</span>, <span class="syn-p">sl_atr</span>=<span class="syn-n">1.5</span>, <span class="syn-p">tp_atr</span>=<span class="syn-n">3.0</span>):
-    <span class="syn-c"># ICT Liquidity Sweep + Market Structure Break (BOS)</span>
-    roll_high = df[<span class="syn-s">'high'</span>].rolling(sweep_window).max().shift(<span class="syn-n">1</span>)
-    sweep_high = (df[<span class="syn-s">'high'</span>] &gt; roll_high) &amp; (df[<span class="syn-s">'close'</span>] &lt; roll_high)
-    bos_bearish = df[<span class="syn-s">'close'</span>] &lt; df[<span class="syn-s">'low'</span>].shift(<span class="syn-n">1</span>)
-    
-    entries = sweep_high &amp; bos_bearish
-    exits = df[<span class="syn-s">'close'</span>] &gt; df[<span class="syn-s">'open'</span>].rolling(<span class="syn-n">5</span>).mean()
-    
-    pf = vbt.Portfolio.<span class="syn-f">from_signals</span>(
-        df[<span class="syn-s">'close'</span>], entries=entries, exits=exits,
-        sl_stop=<span class="syn-n">0.015</span>, tp_stop=<span class="syn-n">0.035</span>, freq=<span class="syn-s">'15m'</span>
-    )
-    <span class="syn-k">return</span> pf`
+          options: [
+            {
+              id: 0,
+              rec: true,
+              tag: { en: 'RECOMMENDED', ua: 'РЕКОМЕНДОВАНО', ru: 'РЕКОМЕНДОВАНО' },
+              title: { en: '1.5x ATR (~18 pips) Volatility Stop', ua: '1.5x ATR (~18 pips) Динамічний стоп', ru: '1.5x ATR (~18 pips) Динамический стоп' },
+              desc: {
+                en: 'Stop-Loss = entry - (1.5 * atr). Adapts to volatility; filters noise in 120+ gold backtests.',
+                ua: 'Stop-Loss = entry - (1.5 * atr). Адаптується під волатильність; фільтрує шум у 120+ бектестах.',
+                ru: 'Stop-Loss = entry - (1.5 * atr). Адаптируется под волатильность; фильтрует шум в 120+ бэктестах.'
+              }
+            },
+            {
+              id: 1,
+              rec: false,
+              title: { en: 'Structural Stop below Asian Sweep Low', ua: 'Структурний стоп за мінімум свіпу Азії', ru: 'Структурный стоп за минимум свипа Азии' },
+              desc: {
+                en: 'Stop-Loss по уровню ликвидности (sweep price). Invalidates trade only if market breaks structural anchor.',
+                ua: 'Stop-Loss за рівнем ліквідності (sweep price). Скасовує угоду лише при повному зломі структури сесії.',
+                ru: 'Stop-Loss по уровню ликвидности (sweep price). Отменяет сетап только при полном сломе структуры сессии.'
+              }
+            },
+            {
+              id: 2,
+              rec: false,
+              title: { en: 'Fixed 1.0% Distance Stop', ua: 'Фіксований ризик 1.0% від точки входу', ru: 'Фиксированный стоп 1.0% от цены входа' },
+              desc: {
+                en: 'Stop-Loss = entry * 0.99. Strict mathematical downside ceiling with fixed target.',
+                ua: 'Stop-Loss = entry * 0.99. Суворе математичне обмеження цінового ризику з фіксованим таргетом.',
+                ru: 'Stop-Loss = entry * 0.99. Строгое математическое ограничение ценового риска с фиксированным таргетом.'
+              }
+            }
+          ]
         },
         {
-          id: 1,
-          name: 'FVG Imbalance Reversal (GBP/USD)',
-          pair: 'GBP/USD M5',
-          stats: { net: '+112.6%', sharpe: '1.98', win: '62.5%', trades: '186', pf: '1.84', dd: '-8.1%' },
-          chartStats: {
-            en: 'Trades: 186 · Fee: 0.0001 · Slippage: 0.5 pip',
-            ua: 'Угод: 186 · Комісія: 0.0001 · Прослизання: 0.5 pip',
-            ru: 'Сделок: 186 · Комиссия: 0.0001 · Проскальзывание: 0.5 pip'
+          stepNum: 2,
+          badge: { en: 'STEP 2 OF 3 · ENTRY EXECUTION TRIGGER', ua: 'КРОК 2 З 3 · МЕХАНІКА ВХОДУ ТА ОРДЕРИ', ru: 'ШАГ 2 ИЗ 3 · МЕХАНИКА ВХОДА И ОРДЕРА' },
+          question: {
+            en: '✓ Stop-Loss level locked. Now we must clarify the <b>Execution Trigger</b>: should the engine enter immediately on the candle close confirming the BOS, or wait for a limit order pullback?<br><br><b>Which order type and trigger should we execute?</b>',
+            ua: '✓ Рівень Stop-Loss зафіксовано. Тепер необхідно визначити <b>тригер виконання (Execution Trigger)</b>: входити по ринку на закритті свічки підтвердження BOS чи чекати відкату лімітним ордером?<br><br><b>Який тип ордеру застосуємо для входу?</b>',
+            ru: '✓ Уровень Stop-Loss зафиксирован. Теперь необходимо определить <b>триггер исполнения (Execution Trigger)</b>: входить по рынку на закрытии свечи подтверждения BOS или выставлять лимитный ордер на откат?<br><br><b>Какой тип ордера применим для входа?</b>'
           },
-          dLine: 'M 10 120 C 50 118, 100 110, 150 102 S 220 95, 280 92 S 350 78, 410 65 S 490 52, 590 32',
-          dArea: 'M 10 120 C 50 118, 100 110, 150 102 S 220 95, 280 92 S 350 78, 410 65 S 490 52, 590 32 L 590 120 L 10 120 Z',
-          markers: [
-            { cx: 150, cy: 102, color: '#3fb950' },
-            { cx: 280, cy: 92, color: '#3fb950' },
-            { cx: 410, cy: 65, color: '#3fb950' },
-            { cx: 490, cy: 52, color: '#e3b341' },
-            { cx: 590, cy: 32, color: '#58a6ff' }
-          ],
-          astItems: [
-            { key: 'ast.FunctionDef', val: 'generate_signals' },
-            { key: 'ast.Call', val: 'vbt.Portfolio.from_signals' },
-            { key: 'RiskModel', val: 'sl_stop=1.2%, tp_stop=2.8%' },
-            { key: 'Self-Healing', val: '100-bar test passed' }
-          ],
-          logs: {
-            en: [
-              { ts: '[11:05:01]', tag: 'VERTEX-AI', ok: false, txt: 'Prompt: "Fair Value Gap (FVG) bullish mitigation on 5m chart" · Cache HIT · 295ms' },
-              { ts: '[11:05:02]', tag: 'AST-GUARD', ok: true, txt: 'ast.parse() verified · Vectorized pandas shift(2) logic validated · 0 syntax errors' },
-              { ts: '[11:05:02]', tag: 'VECTORBT', ok: true, txt: '2,800 bars GBP/USD M5 simulated in 16ms · Sharpe 1.98 · Profit Factor 1.84' }
-            ],
-            ua: [
-              { ts: '[11:05:01]', tag: 'VERTEX-AI', ok: false, txt: 'Промпт: "Бичачий дисбаланс FVG з мітигацією на таймфреймі M5" · Cache HIT · 295мс' },
-              { ts: '[11:05:02]', tag: 'AST-GUARD', ok: true, txt: 'ast.parse() верифіковано · Векторизована логіка shift(2) валідна · 0 синтаксичних помилок' },
-              { ts: '[11:05:02]', tag: 'VECTORBT', ok: true, txt: '2,800 барів GBP/USD M5 змодельовано за 16мс · Шарп 1.98 · Профіт-фактор 1.84' }
-            ],
-            ru: [
-              { ts: '[11:05:01]', tag: 'VERTEX-AI', ok: false, txt: 'Промпт: "Бычий дисбаланс FVG с митигацией на таймфрейме M5" · Cache HIT · 295мс' },
-              { ts: '[11:05:02]', tag: 'AST-GUARD', ok: true, txt: 'ast.parse() верифицирован · Векторизованная логика shift(2) валидна · 0 синтаксических ошибок' },
-              { ts: '[11:05:02]', tag: 'VECTORBT', ok: true, txt: '2,800 баров GBP/USD M5 смоделировано за 16мс · Шарп 1.98 · Профит-фактор 1.84' }
-            ]
-          },
-          code:
-            `<span class="syn-c"># Generated by Vertex AI · Context Cache HIT</span>
-<span class="syn-c"># AST Status: Verified (ast.parse OK, 0 forbidden calls)</span>
-<span class="syn-k">import</span> vectorbt <span class="syn-k">as</span> vbt
-<span class="syn-k">import</span> numpy <span class="syn-k">as</span> np
-
-<span class="syn-k">def</span> <span class="syn-f">generate_signals</span>(df, <span class="syn-p">gap_threshold</span>=<span class="syn-n">0.0008</span>):
-    <span class="syn-c"># Fair Value Gap (FVG) Bullish Mitigation</span>
-    fvg_bullish = df[<span class="syn-s">'low'</span>] &gt; df[<span class="syn-s">'high'</span>].shift(<span class="syn-n">2</span>)
-    mitigation = df[<span class="syn-s">'low'</span>] &lt;= df[<span class="syn-s">'high'</span>].shift(<span class="syn-n">2</span>) + gap_threshold
-    
-    entries = fvg_bullish.shift(<span class="syn-n">1</span>) &amp; mitigation
-    exits = df[<span class="syn-s">'close'</span>] &gt;= df[<span class="syn-s">'high'</span>].rolling(<span class="syn-n">12</span>).max().shift(<span class="syn-n">1</span>)
-    
-    pf = vbt.Portfolio.<span class="syn-f">from_signals</span>(
-        df[<span class="syn-s">'close'</span>], entries=entries, exits=exits,
-        sl_stop=<span class="syn-n">0.012</span>, tp_stop=<span class="syn-n">0.028</span>, freq=<span class="syn-s">'5m'</span>
-    )
-    <span class="syn-k">return</span> pf`
+          options: [
+            {
+              id: 0,
+              rec: true,
+              tag: { en: 'RECOMMENDED', ua: 'РЕКОМЕНДОВАНО', ru: 'РЕКОМЕНДОВАНО' },
+              title: { en: 'Market Order on BOS Confirmation Candle Close', ua: 'Ринковий ордер на закритті свічки підтвердження BOS', ru: 'Рыночный ордер на закрытии свечи подтверждения BOS' },
+              desc: {
+                en: 'Instant execution on bar close; zero risk of missed expansion impulse.',
+                ua: 'Миттєве виконання на закритті бару; відсутній ризик пропустити імпульс.',
+                ru: 'Мгновенное исполнение на закрытии бара; нулевой риск упустить импульс.'
+              }
+            },
+            {
+              id: 1,
+              rec: false,
+              title: { en: 'Limit Order at Broken Fractal Level (custom_entry_price)', ua: 'Лімітний ордер на ретесті зламаного фракталу', ru: 'Лимитный ордер на ретесте пробитого фрактала' },
+              desc: {
+                en: 'Sets custom_entry_price = df["bos_level"]. Superior R/R, but entry might be missed.',
+                ua: 'custom_entry_price = df["bos_level"]. Кращий R/R, але є ризик недоходу ціни.',
+                ru: 'custom_entry_price = df["bos_level"]. Выше R/R, но есть риск недохода цены.'
+              }
+            },
+            {
+              id: 2,
+              rec: false,
+              title: { en: 'Immediate Entry on Sweep Bar Close (Aggressive)', ua: 'Вхід одразу по закриттю свічки свіпу (Агресивний)', ru: 'Вход сразу по закрытию свечи свипа (Агрессивный)' },
+              desc: {
+                en: 'Enters early without waiting for BOS confirmation candle.',
+                ua: 'Ранній вхід без очікування підтвердження злому структури.',
+                ru: 'Ранний вход без ожидания подтверждения слома структуры.'
+              }
+            }
+          ]
         },
         {
-          id: 2,
-          name: 'London Breakout Momentum (XAU/USD)',
-          pair: 'XAU/USD H1',
-          stats: { net: '+94.2%', sharpe: '1.82', win: '59.1%', trades: '98', pf: '1.72', dd: '-5.4%' },
-          chartStats: {
-            en: 'Trades: 98 · Fee: 0.0002 · Slippage: 1.0 pip',
-            ua: 'Угод: 98 · Комісія: 0.0002 · Прослизання: 1.0 pip',
-            ru: 'Сделок: 98 · Комиссия: 0.0002 · Проскальзывание: 1.0 pip'
+          stepNum: 3,
+          badge: { en: 'STEP 3 OF 3 · ORDER LIFECYCLE & INVALIDATION', ua: 'КРОК 3 З 3 · ЖИТТЄВИЙ ЦИКЛ ТА СКАСУВАННЯ', ru: 'ШАГ 3 ИЗ 3 · ЖИЗНЕННЫЙ ЦИКЛ И ОТМЕНА' },
+          question: {
+            en: '✓ Entry execution parameters confirmed. Final critical quant slot: <b>Order Invalidation and Time-Based Exits</b>. How should open positions and pending orders behave at day end?<br><br><b>Which invalidation rule should we enforce?</b>',
+            ua: '✓ Параметри входу зафіксовано. Останній обов’язковий слот: <b>правила скасування та виходу за часом</b>. Як відкриті позиції мають поводитися наприкінці дня?<br><br><b>Яке правило скасування та виходу застосуємо?</b>',
+            ru: '✓ Параметры входа зафиксированы. Последний обязательный слот: <b>правила отмены и выхода по времени (Invalidation & Exits)</b>. Как позиции должны вести себя в конце дня?<br><br><b>Какое правило отмены и закрытия применим?</b>'
           },
-          dLine: 'M 10 120 C 70 116, 110 112, 170 100 S 240 105, 310 88 S 380 72, 440 76 S 510 55, 590 42',
-          dArea: 'M 10 120 C 70 116, 110 112, 170 100 S 240 105, 310 88 S 380 72, 440 76 S 510 55, 590 42 L 590 120 L 10 120 Z',
-          markers: [
-            { cx: 170, cy: 100, color: '#3fb950' },
-            { cx: 310, cy: 88, color: '#3fb950' },
-            { cx: 440, cy: 76, color: '#e3b341' },
-            { cx: 590, cy: 42, color: '#58a6ff' }
-          ],
-          astItems: [
-            { key: 'ast.FunctionDef', val: 'generate_signals' },
-            { key: 'ast.Call', val: 'vbt.Portfolio.from_signals' },
-            { key: 'RiskModel', val: 'sl_stop=1.8%, tp_stop=4.5%' },
-            { key: 'Self-Healing', val: '100-bar test passed' }
-          ],
-          logs: {
-            en: [
-              { ts: '[11:06:10]', tag: 'VERTEX-AI', ok: false, txt: 'Prompt: "Asian range expansion at 08:00 UTC London Open on Gold" · Cache HIT · 310ms' },
-              { ts: '[11:06:11]', tag: 'AST-GUARD', ok: true, txt: 'ast.parse() verified · Time-based filtering syntax verified · 0 security issues' },
-              { ts: '[11:06:11]', tag: 'VECTORBT', ok: true, txt: '1,200 bars XAU/USD H1 simulated in 9ms · Sharpe 1.82 · Max Drawdown -5.4%' }
-            ],
-            ua: [
-              { ts: '[11:06:10]', tag: 'VERTEX-AI', ok: false, txt: 'Промпт: "Пробій діапазону Азії о 08:00 UTC London Open на золоті" · Cache HIT · 310мс' },
-              { ts: '[11:06:11]', tag: 'AST-GUARD', ok: true, txt: 'ast.parse() верифіковано · Синтаксис часової фільтрації валідний · 0 вразливостей' },
-              { ts: '[11:06:11]', tag: 'VECTORBT', ok: true, txt: '1,200 барів XAU/USD H1 змодельовано за 9мс · Шарп 1.82 · Макс. просадка -5.4%' }
-            ],
-            ru: [
-              { ts: '[11:06:10]', tag: 'VERTEX-AI', ok: false, txt: 'Промпт: "Пробой диапазона Азии в 08:00 UTC London Open на золоте" · Cache HIT · 310мс' },
-              { ts: '[11:06:11]', tag: 'AST-GUARD', ok: true, txt: 'ast.parse() верифицирован · Синтаксис временной фильтрации валиден · 0 уязвимостей' },
-              { ts: '[11:06:11]', tag: 'VECTORBT', ok: true, txt: '1,200 баров XAU/USD H1 смоделировано за 9мс · Шарп 1.82 · Макс. просадка -5.4%' }
-            ]
+          options: [
+            {
+              id: 0,
+              rec: true,
+              tag: { en: 'RECOMMENDED', ua: 'РЕКОМЕНДОВАНО', ru: 'РЕКОМЕНДОВАНО' },
+              title: { en: 'Mandatory EOD Close at 23:59 UTC (exits mask)', ua: 'Примусове закриття о 23:59 UTC (маска exits)', ru: 'Принудительное закрытие в 23:59 UTC (маска exits)' },
+              desc: {
+                en: 'Prevents overnight holding and rollover spreads. Exits set via vectorized calendar mask.',
+                ua: 'Запобігає переносу через ніч і стрибкам спредів. Векторна маска в exits.',
+                ru: 'Защита от ночного переноса и ролловера. Векторная маска в exits.'
+              }
+            },
+            {
+              id: 1,
+              rec: false,
+              title: { en: 'Cancel Pending Order if TP Touched Before Fill', ua: 'Анулювати ордер, якщо TP досягнуто до входу', ru: 'Аннулировать ордер, если TP достигнут до входа' },
+              desc: {
+                en: 'Invalidates entry if the setup objective is reached without filling the trade.',
+                ua: 'Скасовує вхід, якщо ціль руху виконана без активації позиції.',
+                ru: 'Отменяет вход, если цель движения достигнута без активации позиции.'
+              }
+            },
+            {
+              id: 2,
+              rec: false,
+              title: { en: 'Pure Swing Holding (Strictly Exit by SL/TP Only)', ua: 'Позиційний свінг (вихід суворо лише за SL/TP)', ru: 'Позиционный свинг (выход строго только по SL/TP)' },
+              desc: {
+                en: 'No time-based invalidation. Positions stay open across days until SL or TP hits.',
+                ua: 'Без виходу за часом. Угода утримується між днями до спрацьовування SL або TP.',
+                ru: 'Без закрытия по времени. Сделка удерживается между днями до SL или TP.'
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: 1,
+      title: 'FVG MITIGATION SETUP',
+      pair: 'EUR/USD · M5',
+      prompt: {
+        en: 'Trade Fair Value Gap (FVG) pullbacks on EUR/USD M5 in direction of H1 trend. Enter long on limit order when price retests the unmitigated imbalance zone.',
+        ua: 'Торгівля тесту зони імбалансу (FVG) на EUR/USD M5 за трендом H1. Вхід у лонг лімітним ордером при ретесті зони дисбалансу.',
+        ru: 'Торговля теста зоны дисбаланса (FVG) на EUR/USD M5 по тренду H1. Вход в лонг лимитным ордером при возврате цены в зону дисбаланса.'
+      },
+      steps: [
+        {
+          stepNum: 1,
+          badge: { en: 'STEP 1 OF 3 · RISK BOUNDARY', ua: 'КРОК 1 З 3 · ЗАХИСНИЙ РИЗИК-ПРОФІЛЬ', ru: 'ШАГ 1 ИЗ 3 · ЗАЩИТНЫЙ РИСК-ПРОФИЛЬ' },
+          question: {
+            en: 'FVG entry logic registered! For a zone-based setup, the strategy requires a concrete <b>Stop-Loss calculation</b>.<br><br><b>Where should the Stop-Loss be placed relative to the imbalance?</b>',
+            ua: 'Вхід за FVG зафіксовано! Для роботи з зоною дисбалансу стратегія вимагає конкретного розрахунку <b>Stop-Loss</b>.<br><br><b>Де розмістити Stop-Loss відносно зони імбалансу?</b>',
+            ru: 'Вход по FVG зафиксирован! Для работы с зоной дисбаланса стратегии требуется конкретный расчет <b>Stop-Loss</b>.<br><br><b>Где разместить Stop-Loss относительно зоны дисбаланса?</b>'
           },
-          code:
-            `<span class="syn-c"># Generated by Vertex AI · Context Cache HIT</span>
-<span class="syn-c"># AST Status: Verified (ast.parse OK, 0 forbidden calls)</span>
-<span class="syn-k">import</span> vectorbt <span class="syn-k">as</span> vbt
-<span class="syn-k">import</span> numpy <span class="syn-k">as</span> np
-
-<span class="syn-k">def</span> <span class="syn-f">generate_signals</span>(df, <span class="syn-p">asian_hours</span>=(<span class="syn-n">0</span>, <span class="syn-n">7</span>), <span class="syn-p">london_open</span>=<span class="syn-n">8</span>):
-    <span class="syn-c"># Asian Range Liquidity Expansion at London Open</span>
-    asian_high = df.between_time(<span class="syn-s">'00:00'</span>, <span class="syn-s">'07:00'</span>)[<span class="syn-s">'high'</span>].max()
-    is_london = df.index.hour == london_open
-    breakout_long = is_london &amp; (df[<span class="syn-s">'close'</span>] &gt; asian_high)
-    
-    entries = breakout_long
-    exits = df.index.hour &gt;= <span class="syn-n">16</span>  <span class="syn-c"># Close before NY close</span>
-    
-    pf = vbt.Portfolio.<span class="syn-f">from_signals</span>(
-        df[<span class="syn-s">'close'</span>], entries=entries, exits=exits,
-        sl_stop=<span class="syn-n">0.018</span>, tp_stop=<span class="syn-n">0.045</span>, freq=<span class="syn-s">'1h'</span>
-    )
-    <span class="syn-k">return</span> pf`
+          options: [
+            {
+              id: 0,
+              rec: true,
+              tag: { en: 'RECOMMENDED', ua: 'РЕКОМЕНДОВАНО', ru: 'РЕКОМЕНДОВАНО' },
+              title: { en: 'Opposite FVG Boundary Invalidation Stop', ua: 'Стоп за протилежну межу зони FVG', ru: 'Стоп за противоположную границу зоны FVG' },
+              desc: {
+                en: 'Stop-Loss = fvg_bottom * 0.9985. Invalidation if the imbalance fails to act as support.',
+                ua: 'Stop-Loss = fvg_bottom * 0.9985. Скасування сетапу, якщо імбаланс пробито.',
+                ru: 'Stop-Loss = fvg_bottom * 0.9985. Отмена сетапа, если зона дисбаланса пробита.'
+              }
+            },
+            {
+              id: 1,
+              rec: false,
+              title: { en: '1.0x ATR Volatility Buffer Stop', ua: '1.0x ATR динамічний буферний стоп', ru: '1.0x ATR динамический буферный стоп' },
+              desc: {
+                en: 'Stop-Loss = entry - (1.0 * atr). Protects against false wicks.',
+                ua: 'Stop-Loss = entry - (1.0 * atr). Захищає від хибних тіней свічок.',
+                ru: 'Stop-Loss = entry - (1.0 * atr). Защищает от ложных проколов тенями.'
+              }
+            },
+            {
+              id: 2,
+              rec: false,
+              title: { en: 'Fixed 15 pips Precision Scalp Stop', ua: 'Фіксований стоп 15 pips для скальпінгу', ru: 'Фиксированный стоп 15 pips для скальпинга' },
+              desc: {
+                en: 'Stop-Loss = entry - 0.0015. Tight predefined risk boundary.',
+                ua: 'Stop-Loss = entry - 0.0015. Короткий заздалегідь визначений ризик.',
+                ru: 'Stop-Loss = entry - 0.0015. Короткий заранее определенный риск.'
+              }
+            }
+          ]
+        },
+        {
+          stepNum: 2,
+          badge: { en: 'STEP 2 OF 3 · LIMIT ENTRY EXECUTION', ua: 'КРОК 2 З 3 · ТОЧКА ЛІМІТНОГО ВХОДУ', ru: 'ШАГ 2 ИЗ 3 · ТОЧКА ЛИМИТНОГО ВХОДА' },
+          question: {
+            en: '✓ Stop-Loss locked. Because this is a limit setup, you must define <b>entry price level</b>. At which point inside the FVG zone should the limit order sit?<br><br><b>Which entry fill level should be used in the trading rules?</b>',
+            ua: '✓ Stop-Loss зафіксовано. Оскільки це лімітний сетап, необхідно задати <b>рівень ціни входу</b>. На якому рівні всередині FVG чекати виконання?<br><br><b>Який рівень входу використовуємо для правил виконання?</b>',
+            ru: '✓ Stop-Loss зафиксирован. Так как это лимитный сетап, необходимо задать <b>уровень цены входа</b>. На каком уровне внутри FVG ждать исполнения?<br><br><b>Какой уровень входа используем в торговых правилах?</b>'
+          },
+          options: [
+            {
+              id: 0,
+              rec: true,
+              tag: { en: 'RECOMMENDED', ua: 'РЕКОМЕНДОВАНО', ru: 'РЕКОМЕНДОВАНО' },
+              title: { en: 'Touch of Imbalance Top Boundary (custom_entry_price = fvg_bottom)', ua: 'Торкання межі імбалансу (fvg_bottom)', ru: 'Касание границы дисбаланса (fvg_bottom)' },
+              desc: {
+                en: 'Immediate fill as soon as price tests the edge of the Fair Value Gap.',
+                ua: 'Миттєве виконання при першому контакті з межею зони FVG.',
+                ru: 'Мгновенное исполнение при первом контакте с границей зоны FVG.'
+              }
+            },
+            {
+              id: 1,
+              rec: false,
+              title: { en: '50% Retest into FVG Equilibrium ((fvg_top + fvg_bottom) / 2)', ua: 'Ретест 50% зони FVG (Equilibrium)', ru: 'Ретест 50% зоны FVG (Equilibrium)' },
+              desc: {
+                en: 'Deeper entry fill for significantly higher risk-reward ratio.',
+                ua: 'Глибше виконання для суттєво вигіднішого співвідношення R/R.',
+                ru: 'Более глубокое исполнение для существенно лучшего R/R.'
+              }
+            },
+            {
+              id: 2,
+              rec: false,
+              title: { en: 'Market on Close Inside FVG Zone', ua: 'Вхід по ринку при закритті свічки всередині FVG', ru: 'Вход по рынку при закрытии свечи внутри FVG' },
+              desc: {
+                en: 'Requires candle to close inside the gap before executing.',
+                ua: 'Вимагає закриття свічки всередині зони перед входом.',
+                ru: 'Требует закрытия свечи внутри зоны перед входом.'
+              }
+            }
+          ]
+        },
+        {
+          stepNum: 3,
+          badge: { en: 'STEP 3 OF 3 · ORDER INVALIDATION POLICY', ua: 'КРОК 3 З 3 · ПРАВИЛО СКАСУВАННЯ ЛІМІТУ', ru: 'ШАГ 3 ИЗ 3 · ПРАВИЛО ОТМЕНЫ ЛИМИТА' },
+          question: {
+            en: '✓ Entry level defined. What is the invalidation policy if price reaches Take-Profit before touching your limit order?<br><br><b>How should unfilled limit orders be invalidated?</b>',
+            ua: '✓ Рівень входу визначено. Як вчинити, якщо ціна досягла Take-Profit до того, як торкнулася лімітного ордеру?<br><br><b>Яке правило скасування ліміту застосуємо?</b>',
+            ru: '✓ Уровень входа определен. Как поступить, если цена достигла Take-Profit до того, как коснулась лимитного ордера?<br><br><b>Какое правило отмены лимита применим?</b>'
+          },
+          options: [
+            {
+              id: 0,
+              rec: true,
+              tag: { en: 'RECOMMENDED', ua: 'РЕКОМЕНДОВАНО', ru: 'РЕКОМЕНДОВАНО' },
+              title: { en: 'Cancel Limit if TP Touched First (tp_hit_first)', ua: 'Скасувати ліміт, якщо TP досягнуто раніше', ru: 'Отменить лимит, если TP достигнут раньше' },
+              desc: {
+                en: 'Strict invalidation: prevents entering late when the intended impulse has already played out.',
+                ua: 'Суворе скасування: захищає від запізнілого входу після реалізації імпульсу.',
+                ru: 'Строгая отмена: защищает от запоздалого входа после отработки движения.'
+              }
+            },
+            {
+              id: 1,
+              rec: false,
+              title: { en: 'Cancel at End of Day (EOD Expiry at 23:59 UTC)', ua: 'Анулювати ордер в кінці дня (EOD Expiry о 23:59 UTC)', ru: 'Аннулировать ордер в конце дня (EOD Expiry в 23:59 UTC)' },
+              desc: {
+                en: 'Unfilled limit orders expire at midnight UTC; orders do not carry overnight.',
+                ua: 'Невиконані ліміти згорають опівночі UTC і не переносяться на наступний день.',
+                ru: 'Неисполненные лимиты сгорают в полночь UTC и не переносятся на следующий день.'
+              }
+            },
+            {
+              id: 2,
+              rec: false,
+              title: { en: 'Dual Invalidation: TP Touch + End of Day Expiry', ua: 'Подвійне скасування: торкання TP + EOD Expiry', ru: 'Двойная отмена: касание TP + EOD Expiry' },
+              desc: {
+                en: 'Combines both safety guards: cancels if TP is hit or at day close.',
+                ua: 'Комбінує обидва захисні механізми: скасування при TP або в кінці дня.',
+                ru: 'Комбинирует обе защиты: отмена при касании TP или при закрытии дня.'
+              }
+            }
+          ]
         }
-      ];
-
-      let curPreset = 0;
-      let activeTab = 'tearsheet';
-      let toastTimer = null;
-
-      const getLang = () => window.__curLang || 'ru';
-      const getSuf = (n, lang) => {
-        if (lang === 'en') return n + ' trades';
-        if (lang === 'ua') return n + ' угод';
-        return n + ' сделок';
-      };
-
-      function toast(msg) {
-        const el = document.getElementById('qlToast');
-        if (!el) return;
-        el.textContent = msg;
-        el.classList.add('show');
-        clearTimeout(toastTimer);
-        toastTimer = setTimeout(() => el.classList.remove('show'), 3000);
-      }
-
-      function render() {
-        const p = PRESETS[curPreset];
-        const lang = getLang();
-
-        // Stats
-        const vNet = document.getElementById('qlValNet');
-        const vSharpe = document.getElementById('qlValSharpe');
-        const vWin = document.getElementById('qlValWin');
-        const vTrades = document.getElementById('qlValTrades');
-        const vPF = document.getElementById('qlValPF');
-        const vDD = document.getElementById('qlValDD');
-        if (vNet) vNet.textContent = p.stats.net;
-        if (vSharpe) vSharpe.textContent = p.stats.sharpe;
-        if (vWin) vWin.textContent = p.stats.win;
-        if (vTrades) vTrades.textContent = getSuf(p.stats.trades, lang);
-        if (vPF) vPF.textContent = p.stats.pf;
-        if (vDD) vDD.textContent = p.stats.dd;
-
-        // Chart header
-        const cPair = document.getElementById('qlChartPair');
-        const cStats = document.getElementById('qlChartStats');
-        if (cPair) cPair.textContent = p.pair;
-        if (cStats) cStats.textContent = p.chartStats[lang] || p.chartStats.en;
-
-        // SVG
-        const line = document.getElementById('qlLine');
-        const area = document.getElementById('qlArea');
-        if (line) line.setAttribute('d', p.dLine);
-        if (area) area.setAttribute('d', p.dArea);
-
-        // Markers
-        const mG = document.getElementById('qlMarkers');
-        if (mG) {
-          mG.innerHTML = p.markers.map(m =>
-            `<circle cx="${m.cx}" cy="${m.cy}" r="3.5" fill="${m.color}" stroke="#ffffff" stroke-width="2"/>`
-          ).join('');
+      ]
+    },
+    {
+      id: 2,
+      title: 'SESSION RANGE BREAKOUT',
+      pair: 'GBP/JPY · M15',
+      prompt: {
+        en: 'Breakout strategy on GBP/JPY M15. Enter long when London open bar (08:00 UTC) breaks above Asian session range (calculate_session_range) with volume surge.',
+        ua: 'Пробійна стратегія на GBP/JPY M15. Вхід у лонг при пробої діапазону Азії (calculate_session_range) на відкритті Лондона (08:00 UTC) зі сплеском об’єму.',
+        ru: 'Пробойная стратегия на GBP/JPY M15. Вход в лонг при пробое диапазона Азии (calculate_session_range) на открытии Лондона (08:00 UTC) со всплеском объема.'
+      },
+      steps: [
+        {
+          stepNum: 1,
+          badge: { en: 'STEP 1 OF 3 · RISK BOUNDARY', ua: 'КРОК 1 З 3 · ЗАХИСНИЙ РИЗИК-ПРОФІЛЬ', ru: 'ШАГ 1 ИЗ 3 · ЗАЩИТНЫЙ РИСК-ПРОФИЛЬ' },
+          question: {
+            en: 'Breakout parameters registered! Cross pairs like GBP/JPY exhibit mean-reverting false spikes. We must define the <b>Stop-Loss calculation level</b>.<br><br><b>Where should the protective Stop-Loss be placed?</b>',
+            ua: 'Параметри пробою зафіксовано! Крос-пари типу GBP/JPY схильні до хибних виносів. Необхідно зафіксувати <b>рівень Stop-Loss</b>.<br><br><b>Де встановити захисний Stop-Loss?</b>',
+            ru: 'Параметры пробоя зафиксированы! Кросс-пары типа GBP/JPY склонны к ложным выносам. Необходимо зафиксировать <b>уровень Stop-Loss</b>.<br><br><b>Где установить защитный Stop-Loss?</b>'
+          },
+          options: [
+            {
+              id: 0,
+              rec: true,
+              tag: { en: 'RECOMMENDED', ua: 'РЕКОМЕНДОВАНО', ru: 'РЕКОМЕНДОВАНО' },
+              title: { en: 'Asian Range Midpoint Stop ((session_high + session_low) / 2)', ua: 'Стоп за середину діапазону Азії (Asian Midpoint)', ru: 'Стоп за середину диапазона Азии (Asian Midpoint)' },
+              desc: {
+                en: 'Structural stop at range median; prevents getting wicked by normal liquidity retracements.',
+                ua: 'Структурний стоп за медіаною діапазону; захищає від вибивання шумом.',
+                ru: 'Структурный стоп по медиане диапазона; защищает от выбивания шумом.'
+              }
+            },
+            {
+              id: 1,
+              rec: false,
+              title: { en: '1.5x ATR Volatility Stop', ua: '1.5x ATR динамічний волатильний стоп', ru: '1.5x ATR динамический волатильный стоп' },
+              desc: {
+                en: 'Stop-Loss = entry - (1.5 * atr). Mathematical volatility buffer.',
+                ua: 'Stop-Loss = entry - (1.5 * atr). Математичний буфер волатильності.',
+                ru: 'Stop-Loss = entry - (1.5 * atr). Математический буфер волатильности.'
+              }
+            },
+            {
+              id: 2,
+              rec: false,
+              title: { en: 'Breakout Bar Low Invalidation Stop', ua: 'Стоп за мінімум свічки пробою', ru: 'Стоп за минимум свечи пробоя' },
+              desc: {
+                en: 'Stop-Loss = df["low"].shift(1). Tight invalidation if breakout impulse immediately collapses.',
+                ua: 'Stop-Loss = df["low"].shift(1). Короткий стоп при швидкому згасанні імпульсу.',
+                ru: 'Stop-Loss = df["low"].shift(1). Короткий стоп при быстром угасании импульса.'
+              }
+            }
+          ]
+        },
+        {
+          stepNum: 2,
+          badge: { en: 'STEP 2 OF 3 · BREAKOUT CONFIRMATION', ua: 'КРОК 2 З 3 · ПІДТВЕРДЖЕННЯ ПРОБОЮ', ru: 'ШАГ 2 ИЗ 3 · ПОДТВЕРЖДЕНИЕ ПРОБОЯ' },
+          question: {
+            en: '✓ Stop-Loss locked. How should the breakout be confirmed to filter out false wicks?<br><br><b>Which confirmation trigger should we enforce?</b>',
+            ua: '✓ Stop-Loss зафіксовано. Як підтверджувати пробій, щоб відфільтрувати хибні проколи тінями?<br><br><b>Яку умову підтвердження застосуємо?</b>',
+            ru: '✓ Stop-Loss зафиксирован. Как подтверждать пробой, чтобы отфильтровать ложные проколы тенями?<br><br><b>Какое условие подтверждения применим?</b>'
+          },
+          options: [
+            {
+              id: 0,
+              rec: true,
+              tag: { en: 'RECOMMENDED', ua: 'РЕКОМЕНДОВАНО', ru: 'РЕКОМЕНДОВАНО' },
+              title: { en: 'Candle Body Close above Session High + Volume Filter', ua: 'Закриття тілом свічки вище сесії + фільтр об’єму', ru: 'Закрытие телом свечи выше сессии + фильтр объема' },
+              desc: {
+                en: 'df["close"] > session_high and volume > 1.5x rolling volume MA.',
+                ua: 'df["close"] > session_high та об’єм > 1.5x від середнього.',
+                ru: 'df["close"] > session_high и объем > 1.5x от скользящего среднего.'
+              }
+            },
+            {
+              id: 1,
+              rec: false,
+              title: { en: 'London Open First Bar Trigger (08:00 UTC Exact)', ua: 'Вхід на першій свічці відкриття Лондона (08:00 UTC)', ru: 'Вход на первой свече открытия Лондона (08:00 UTC)' },
+              desc: {
+                en: 'Takes advantage of the initial session liquidity injection.',
+                ua: 'Використовує початковий приплив сесійної ліквідності.',
+                ru: 'Использует начальный приток сессионной ликвидности.'
+              }
+            },
+            {
+              id: 2,
+              rec: false,
+              title: { en: 'Pullback Retest of Asian High after Initial Break', ua: 'Ретест верхньої межі Азії після первинного пробою', ru: 'Ретест верхней границы Азии после первичного пробоя' },
+              desc: {
+                en: 'Enters on limit order when price retests broken resistance as support.',
+                ua: 'Лімітний вхід при ретесті пробитого опору як підтримки.',
+                ru: 'Лимитный вход при ретесте пробитого сопротивления как поддержки.'
+              }
+            }
+          ]
+        },
+        {
+          stepNum: 3,
+          badge: { en: 'STEP 3 OF 3 · SESSION EXIT & OVERNIGHT PROTECTION', ua: 'КРОК 3 З 3 · СЕСІЙНИЙ ВИХІД ТА ЗАХИСТ ВІД НОЧІ', ru: 'ШАГ 3 ИЗ 3 · СЕССИОННЫЙ ВЫХОД И ЗАЩИТА ОТ НОЧИ' },
+          question: {
+            en: '✓ Confirmation trigger set. Breakout trades should not linger across inactive market hours. How should the position be closed by time?<br><br><b>Which time-based exit should be assigned to exits mask?</b>',
+            ua: '✓ Умову входу зафіксовано. Пробійні угоди не повинні зависати під час неактивних годин. Як закривати позицію за часом?<br><br><b>Який вихід за часом призначимо в маску exits?</b>',
+            ru: '✓ Условие входа зафиксировано. Пробойные сделки не должны зависать в неактивные часы. Как закрывать позицию по времени?<br><br><b>Какой выход по времени назначим в маску exits?</b>'
+          },
+          options: [
+            {
+              id: 0,
+              rec: true,
+              tag: { en: 'RECOMMENDED', ua: 'РЕКОМЕНДОВАНО', ru: 'РЕКОМЕНДОВАНО' },
+              title: { en: 'Mandatory EOD Close at 23:59 UTC (exits = eod_exit)', ua: 'Примусове закриття о 23:59 UTC (exits = eod_exit)', ru: 'Принудительное закрытие в 23:59 UTC (exits = eod_exit)' },
+              desc: {
+                en: 'Guarantees 0 overnight exposure. Vectorized daily calendar boundary exit.',
+                ua: 'Гарантує відсутність нічного ризику. Векторний вихід на межі дня.',
+                ru: 'Гарантирует отсутствие ночного риска. Векторный выход на границе дня.'
+              }
+            },
+            {
+              id: 1,
+              rec: false,
+              title: { en: 'European Session Close at 16:00 UTC (df.index.hour >= 16)', ua: 'Закриття європейської сесії о 16:00 UTC', ru: 'Закрытие европейской сессии в 16:00 UTC' },
+              desc: {
+                en: 'Exits near peak intraday liquidity before evening volatility contraction.',
+                ua: 'Вихід на піку сесійної ліквідності до вечірнього затишшя.',
+                ru: 'Выход на пике сессионной ликвидности до вечернего затишья.'
+              }
+            },
+            {
+              id: 2,
+              rec: false,
+              title: { en: 'RSI(14) > 75 Momentum Exhaustion or EOD Close', ua: 'Вихід за RSI(14) > 75 або при закритті дня', ru: 'Выход по RSI(14) > 75 или при закрытии дня' },
+              desc: {
+                en: 'Locks profit at overbought extremes, force-closes any remainder at day close.',
+                ua: 'Фіксує прибуток на перекупленості, залишок закриває в кінці дня.',
+                ru: 'Фиксирует прибыль на перекупленности, остаток закрывает в конце дня.'
+              }
+            }
+          ]
         }
+      ]
+    }
+  ];
 
-        // Logs
-        const logBox = document.getElementById('qlLog');
-        if (logBox) {
-          const arr = p.logs[lang] || p.logs.en;
-          logBox.innerHTML = arr.map(l =>
-            `<div class="ql-log-line"><span class="ql-log-ts">${l.ts}</span><span class="ql-log-tag${l.ok ? ' ok' : ''}">${l.tag}</span><span class="ql-log-txt">${l.txt}</span></div>`
-          ).join('');
-        }
-
-        // Code
-        const codePre = document.getElementById('qlCodeContent');
-        if (codePre) codePre.innerHTML = p.code;
-
-        // AST Bar
-        const astBar = document.getElementById('qlAstBar');
-        if (astBar) {
-          astBar.innerHTML = p.astItems.map(a =>
-            `<span class="ql-ast-item"><span style="color:#3fb950">✓</span> <b>${a.key}</b>: ${a.val}</span>`
-          ).join('');
-        }
-
-        // Preset buttons active state
-        document.querySelectorAll('.ql-pbtn').forEach(btn => {
-          btn.classList.toggle('active', +btn.dataset.preset === curPreset);
-        });
-      }
-
-      // Presets click
-      document.querySelectorAll('.ql-pbtn').forEach(btn => {
-        btn.onclick = () => {
-          curPreset = +btn.dataset.preset;
-          render();
-        };
-      });
-
-      // Tabs click
-      const tabTear = document.getElementById('qlTabTearsheet');
-      const tabCode = document.getElementById('qlTabCode');
-      const viewTear = document.getElementById('qlViewTearsheet');
-      const viewCode = document.getElementById('qlViewCode');
-
-      if (tabTear && tabCode && viewTear && viewCode) {
-        tabTear.onclick = () => {
-          activeTab = 'tearsheet';
-          tabTear.classList.add('active');
-          tabCode.classList.remove('active');
-          tabTear.setAttribute('aria-selected', 'true');
-          tabCode.setAttribute('aria-selected', 'false');
-          viewTear.hidden = false;
-          viewCode.hidden = true;
-        };
-        tabCode.onclick = () => {
-          activeTab = 'code';
-          tabCode.classList.add('active');
-          tabTear.classList.remove('active');
-          tabCode.setAttribute('aria-selected', 'true');
-          tabTear.setAttribute('aria-selected', 'false');
-          viewCode.hidden = false;
-          viewTear.hidden = true;
-        };
-      }
-
-      // Action buttons
-      const btnRun = document.getElementById('qlBtnRun');
-      const btnAst = document.getElementById('qlBtnAst');
-      const btnOpt = document.getElementById('qlBtnOpt');
-
-      if (btnRun) {
-        btnRun.onclick = () => {
-          const lang = getLang();
-          const orig = btnRun.textContent;
-          btnRun.disabled = true;
-          btnRun.textContent = lang === 'en' ? '⏳ Simulating...' : (lang === 'ua' ? '⏳ Моделювання...' : '⏳ Симуляция...');
-          const line = document.getElementById('qlLine');
-          if (line) {
-            line.style.opacity = '0.3';
-            line.style.transition = 'opacity .3s';
+  function getCustomSteps(lang) {
+    const isEn = lang === 'en';
+    const isUa = lang === 'ua';
+    return [
+      {
+        stepNum: 1,
+        badge: { en: 'STEP 1 OF 3 · RISK BOUNDARY', ua: 'КРОК 1 З 3 · ЗАХИСНИЙ РИЗИК-ПРОФІЛЬ', ru: 'ШАГ 1 ИЗ 3 · ЗАЩИТНЫЙ РИСК-ПРОФИЛЬ' },
+        question: {
+          en: 'Hypothesis registered! Every strategy requires a deterministic Stop-Loss price level.<br><br><b>Where would you like to place the Stop-Loss?</b>',
+          ua: 'Гіпотезу зареєстровано! Кожна стратегія потребує детермінованого рівня ціни Stop-Loss.<br><br><b>Де розмістимо рівень Stop-Loss?</b>',
+          ru: 'Гипотеза зарегистрирована! Каждая стратегия требует детерминированного уровня цены Stop-Loss.<br><br><b>Где разместим уровень Stop-Loss?</b>'
+        },
+        options: [
+          {
+            id: 0,
+            rec: true,
+            tag: { en: 'RECOMMENDED', ua: 'РЕКОМЕНДОВАНО', ru: 'РЕКОМЕНДОВАНО' },
+            title: { en: '1.5x ATR Dynamic Volatility Stop', ua: '1.5x ATR динамічний стоп', ru: '1.5x ATR динамический стоп' },
+            desc: {
+              en: 'Stop-Loss = entry - (1.5 * atr). Adapts to volatility, filters market noise.',
+              ua: 'Stop-Loss = entry - (1.5 * atr). Адаптується під волатильність і ринковий шум.',
+              ru: 'Stop-Loss = entry - (1.5 * atr). Адаптируется под волатильность и рыночный шум.'
+            }
+          },
+          {
+            id: 1,
+            rec: false,
+            title: { en: 'Structural Stop at Local Swing Extremum', ua: 'Структурний стоп за локальний екстремум', ru: 'Структурный стоп за локальный экстремум' },
+            desc: {
+              en: 'Stop-Loss anchored at previous fractal swing level.',
+              ua: 'Stop-Loss за попереднім фрактальним екстремумом.',
+              ru: 'Stop-Loss по предыдущему фрактальному экстремуму.'
+            }
+          },
+          {
+            id: 2,
+            rec: false,
+            title: { en: 'Fixed 1.0% Price Distance Stop', ua: 'Фіксований ризик 1.0% від точки входу', ru: 'Фиксированный стоп 1.0% от цены входа' },
+            desc: {
+              en: 'Stop-Loss = entry * 0.99. Strict mathematical downside ceiling.',
+              ua: 'Stop-Loss = entry * 0.99. Суворе математичне обмеження цінового ризику.',
+              ru: 'Stop-Loss = entry * 0.99. Строгое математическое ограничение ценового риска.'
+            }
           }
-          setTimeout(() => {
-            btnRun.disabled = false;
-            btnRun.textContent = orig;
-            if (line) line.style.opacity = '1';
-            const msg = lang === 'en'
-              ? '✓ VectorBT: 1,480 bars simulated in 12ms · Walk-Forward verified'
-              : (lang === 'ua'
-                ? '✓ VectorBT: 1,480 барів змодельовано за 12мс · Walk-Forward підтверджено'
-                : '✓ VectorBT: 1,480 баров смоделировано за 12мс · Walk-Forward подтвержден');
-            toast(msg);
-          }, 650);
-        };
+        ]
+      },
+      {
+        stepNum: 2,
+        badge: { en: 'STEP 2 OF 3 · ENTRY EXECUTION TRIGGER', ua: 'КРОК 2 З 3 · МЕХАНІКА ВХОДУ ТА ОРДЕРИ', ru: 'ШАГ 2 ИЗ 3 · МЕХАНИКА ВХОДА И ОРДЕРА' },
+        question: {
+          en: '✓ Stop-Loss locked. How should the strategy execute the entry signal?<br><br><b>Which execution trigger should be implemented in the signal logic?</b>',
+          ua: '✓ Stop-Loss зафіксовано. Як стратегія повинна виконувати сигнал на вхід?<br><br><b>Який тригер виконання реалізувати в логіці сигналів?</b>',
+          ru: '✓ Stop-Loss зафиксирован. Как стратегия должна исполнять сигнал на вход?<br><br><b>Какой триггер исполнения реализовать в логике сигналов?</b>'
+        },
+        options: [
+          {
+            id: 0,
+            rec: true,
+            tag: { en: 'RECOMMENDED', ua: 'РЕКОМЕНДОВАНО', ru: 'РЕКОМЕНДОВАНО' },
+            title: { en: 'Market Order on Candle Close (df["close"])', ua: 'Ринковий ордер на закритті свічки (df["close"])', ru: 'Рыночный ордер на закрытии свечи (df["close"])' },
+            desc: {
+              en: 'Standard backtest engine execution; immediate fill upon signal confirmation.',
+              ua: 'Стандартне виконання бектест-рушія; миттєвий вхід при підтвердженні.',
+              ru: 'Стандартное исполнение бэктест-движка; мгновенный вход при подтверждении.'
+            }
+          },
+          {
+            id: 1,
+            rec: false,
+            title: { en: 'Limit Order at Specific Reference Price (custom_entry_price)', ua: 'Лімітний ордер за опорною ціною (custom_entry_price)', ru: 'Лимитный ордер по опорной цене (custom_entry_price)' },
+            desc: {
+              en: 'Fills only if price retraces to limit level; better R/R ratio.',
+              ua: 'Виконується лише при відкаті до рівня; краще співвідношення R/R.',
+              ru: 'Исполняется только при откате к уровню; лучшее соотношение R/R.'
+            }
+          },
+          {
+            id: 2,
+            rec: false,
+            title: { en: 'Signal Bar High/Low Breakout Execution', ua: 'Пробій екстремуму сигнальної свічки', ru: 'Пробой экстремума сигнальной свечи' },
+            desc: {
+              en: 'Enters when current price exceeds previous candle extreme.',
+              ua: 'Вхід при перевищенні екстремуму попередньої свічки.',
+              ru: 'Вход при превышении экстремума предыдущей свечи.'
+            }
+          }
+        ]
+      },
+      {
+        stepNum: 3,
+        badge: { en: 'STEP 3 OF 3 · ORDER LIFECYCLE & INVALIDATION', ua: 'КРОК 3 З 3 · ЖИТТЄВИЙ ЦИКЛ ТА СКАСУВАННЯ', ru: 'ШАГ 3 ИЗ 3 · ЖИЗНЕННЫЙ ЦИКЛ И ОТМЕНА' },
+        question: {
+          en: '✓ Entry trigger confirmed. What is the invalidation and overnight exit policy for this strategy?<br><br><b>Which rule should be assigned to the exits mask?</b>',
+          ua: '✓ Тригер входу підтверджено. Яке правило скасування та виходу через ніч закріпити за стратегією?<br><br><b>Яке правило призначити в маску exits?</b>',
+          ru: '✓ Триггер входа подтвержден. Какое правило отмены и ночного выхода закрепить за стратегией?<br><br><b>Какое правило назначить в маску exits?</b>'
+        },
+        options: [
+          {
+            id: 0,
+            rec: true,
+            tag: { en: 'RECOMMENDED', ua: 'РЕКОМЕНДОВАНО', ru: 'РЕКОМЕНДОВАНО' },
+            title: { en: 'Mandatory EOD Close at 23:59 UTC (exits = eod_exit)', ua: 'Примусове закриття о 23:59 UTC (exits = eod_exit)', ru: 'Принудительное закрытие в 23:59 UTC (exits = eod_exit)' },
+            desc: {
+              en: 'Closes all open trades before midnight UTC to eliminate overnight risk.',
+              ua: 'Закриває відкриті позиції до опівночі UTC для усунення нічного ризику.',
+              ru: 'Закрывает открытые позиции до полуночи UTC для исключения ночного риска.'
+            }
+          },
+          {
+            id: 1,
+            rec: false,
+            title: { en: 'Cancel if Target Reached Before Entry Fill', ua: 'Скасувати ордер, якщо ціль досягнуто до входу', ru: 'Отменить ордер, если цель достигнута до входа' },
+            desc: {
+              en: 'Invalidates pending setup if the target was already hit.',
+              ua: 'Анулює ліміт, якщо ціль руху вже відпрацьована.',
+              ru: 'Аннулирует лимит, если цель движения уже отработана.'
+            }
+          },
+          {
+            id: 2,
+            rec: false,
+            title: { en: 'Swing Trade Holding (Strictly Exit by SL/TP)', ua: 'Позиційне утримання (вихід виключно за SL/TP)', ru: 'Позиционное удержание (выход исключительно по SL/TP)' },
+            desc: {
+              en: 'Trades carry across multiple sessions until stop-loss or take-profit triggers.',
+              ua: 'Угода переноситься між сесіями до спрацьовування стопу або тейку.',
+              ru: 'Сделка переносится между сессиями до срабатывания стопа или тейка.'
+            }
+          }
+        ]
       }
+    ];
+  }
 
-      if (btnAst) {
-        btnAst.onclick = () => {
-          const lang = getLang();
-          const msg = lang === 'en'
-            ? '✓ AST Verified: 4 indicator nodes, strict schema, 0 security violations'
-            : (lang === 'ua'
-              ? '✓ AST верифіковано: 4 вузли індикаторів, сувора схема, 0 вразливостей'
-              : '✓ AST верифицирован: 4 узла индикаторов, строгая схема, 0 уязвимостей');
-          toast(msg);
-        };
+  function buildCustomBlueprint(promptStr, choices, lang) {
+    const isEn = lang === 'en';
+    const isUa = lang === 'ua';
+    return {
+      context: isEn
+        ? `Custom strategy architecture for "${promptStr.slice(0, 50)}...". Indicator dependencies & multi-timeframe rules verified.`
+        : (isUa
+          ? `Архітектура користувацької квант-стратегії для "${promptStr.slice(0, 50)}...". Залежності індикаторів перевірено.`
+          : `Архитектура пользовательской квант-стратегии для "${promptStr.slice(0, 50)}...". Зависимости индикаторов проверены.`),
+      entry: isEn
+        ? `Execution trigger: ${choices[1] || 'Market Order on Candle Close'}. Zero look-ahead bias enforced.`
+        : (isUa
+          ? `Тригер виконання: ${choices[1] || 'Ринковий ордер на закритті свічки'}. Захист від заглядання вперед.`
+          : `Триггер исполнения: ${choices[1] || 'Рыночный ордер на закрытии свечи'}. Защита от заглядывания вперед.`),
+      trade: isEn
+        ? `Stop-Loss: ${choices[0] || '1.5x ATR'}. Target R/R via self.risk_reward_ratio. Invalidation: ${choices[2] || 'EOD Close at 23:59 UTC'}.`
+        : (isUa
+          ? `Stop-Loss: ${choices[0] || '1.5x ATR'}. Тейк-профіт через self.risk_reward_ratio. Скасування: ${choices[2] || 'EOD Close о 23:59 UTC'}.`
+          : `Stop-Loss: ${choices[0] || '1.5x ATR'}. Тейк-профит через self.risk_reward_ratio. Отмена: ${choices[2] || 'EOD Close в 23:59 UTC'}.`)
+    };
+  }
+
+  function buildDynamicCode(presetId, choices) {
+    const slChoice = (choices[0] || '1.5x ATR Volatility Stop').replace(/"/g, "'");
+    const entryChoice = (choices[1] || 'Market Order on Candle Close').replace(/"/g, "'");
+    const exitChoice = (choices[2] || 'Mandatory EOD Close at 23:59 UTC').replace(/"/g, "'");
+
+    const isLimit = entryChoice.toLowerCase().includes('limit') || entryChoice.toLowerCase().includes('ліміт') || entryChoice.toLowerCase().includes('лимит');
+    const isEOD = exitChoice.toLowerCase().includes('eod') || exitChoice.toLowerCase().includes('23:59') || exitChoice.toLowerCase().includes('close');
+
+    if (presetId === 0) {
+      return `<span class="syn-k">import</span> pandas <span class="syn-k">as</span> pd
+<span class="syn-k">import</span> numpy <span class="syn-k">as</span> np
+<span class="syn-k">from</span> indicators.fractal <span class="syn-k">import</span> detect_fractals
+<span class="syn-k">from</span> indicators.sweep <span class="syn-k">import</span> detect_sweeps
+<span class="syn-k">from</span> indicators.bos <span class="syn-k">import</span> detect_bos
+<span class="syn-k">from</span> indicators.atr <span class="syn-k">import</span> calculate_atr
+
+<span class="syn-k">class</span> <span class="syn-f">GoldLiquiditySweepStrategy</span>:
+    <span class="syn-c">"""
+    Quantitative Strategy: Gold Liquidity Sweep & BOS Execution.
+    • Stop-Loss Model: ${slChoice}
+    • Entry Trigger: ${entryChoice}
+    • Invalidation: ${exitChoice}
+    """</span>
+    <span class="syn-k">def</span> <span class="syn-f">__init__</span>(<span class="syn-p">self</span>, <span class="syn-p">risk_reward_ratio</span>: float = <span class="syn-n">2.0</span>):
+        <span class="syn-p">self</span>.risk_reward_ratio = risk_reward_ratio
+
+    <span class="syn-k">def</span> <span class="syn-f">generate_signals</span>(<span class="syn-p">self</span>, <span class="syn-p">df</span>: pd.DataFrame) -&gt; dict:
+        <span class="syn-c"># 1. Indicator Dependencies (Fractals required before Sweeps/BOS)</span>
+        df = detect_fractals(df)
+        df = detect_sweeps(df)
+        df = detect_bos(df)
+        df = calculate_atr(df, window=<span class="syn-n">14</span>)
+
+        <span class="syn-c"># 2. Bullish Setup & Entry Execution</span>
+        ${isLimit ? `custom_entry_price = df['bos_level']
+        entries = df['sweep_down'] & (df['low'] <= custom_entry_price)` : `custom_entry_price = None
+        entries = df['sweep_down'] & df['bos_up']`}
+        short_entries = pd.Series(<span class="syn-k">False</span>, index=df.index)
+
+        <span class="syn-c"># 3. Stop-Loss & Take-Profit Targets</span>
+        entry_price = custom_entry_price <span class="syn-k">if</span> custom_entry_price <span class="syn-k">is not None else</span> df[<span class="syn-s">'close'</span>]
+        atr = df[<span class="syn-s">'atr_14'</span>]
+        ${slChoice.includes('sweep') || slChoice.includes('свип') || slChoice.includes('свіп') ? `stop_loss = df['sweep_price']` : (slChoice.includes('1.0%') ? `stop_loss = entry_price * 0.99` : `stop_loss = entry_price - (1.5 * atr)`)}
+        take_profit = entry_price + (np.abs(entry_price - stop_loss) * <span class="syn-p">self</span>.risk_reward_ratio)
+
+        <span class="syn-c"># 4. Invalidation & EOD Exit</span>
+        bar_date = df.index.to_series().dt.normalize()
+        eod_exit = bar_date != bar_date.shift(-<span class="syn-n">1</span>).fillna(bar_date)
+        exits = eod_exit <span class="syn-k">if</span> ${isEOD ? 'True' : 'False'} <span class="syn-k">else None</span>
+
+        <span class="syn-k">return</span> {
+            <span class="syn-s">'entries'</span>: entries,
+            <span class="syn-s">'short_entries'</span>: short_entries,
+            <span class="syn-s">'custom_entry_price'</span>: custom_entry_price,
+            <span class="syn-s">'stop_loss'</span>: stop_loss,
+            <span class="syn-s">'take_profit'</span>: take_profit,
+            <span class="syn-s">'exits'</span>: exits
+        }`;
+    } else if (presetId === 1) {
+      return `<span class="syn-k">import</span> pandas <span class="syn-k">as</span> pd
+<span class="syn-k">import</span> numpy <span class="syn-k">as</span> np
+<span class="syn-k">from</span> indicators.fvg <span class="syn-k">import</span> detect_fvg
+<span class="syn-k">from</span> indicators.atr <span class="syn-k">import</span> calculate_atr
+
+<span class="syn-k">class</span> <span class="syn-f">EurUsdFvgMitigationStrategy</span>:
+    <span class="syn-c">"""
+    Quantitative Strategy: FVG Imbalance Retest Execution.
+    • Stop-Loss Model: ${slChoice}
+    • Entry Trigger: ${entryChoice}
+    • Invalidation: ${exitChoice}
+    """</span>
+    <span class="syn-k">def</span> <span class="syn-f">__init__</span>(<span class="syn-p">self</span>, <span class="syn-p">risk_reward_ratio</span>: float = <span class="syn-n">2.0</span>):
+        <span class="syn-p">self</span>.risk_reward_ratio = risk_reward_ratio
+
+    <span class="syn-k">def</span> <span class="syn-f">generate_signals</span>(<span class="syn-p">self</span>, <span class="syn-p">df</span>: pd.DataFrame) -&gt; dict:
+        df = detect_fvg(df)
+        df = calculate_atr(df, window=<span class="syn-n">14</span>)
+
+        fvg_active = df[<span class="syn-s">'fvg_active'</span>] &amp; df[<span class="syn-s">'fvg_bullish'</span>].shift(<span class="syn-n">1</span>)
+        fvg_entry_level = df[<span class="syn-s">'fvg_bottom'</span>]
+        entries = fvg_active &amp; (df[<span class="syn-s">'low'</span>] &lt;= fvg_entry_level)
+        short_entries = pd.Series(<span class="syn-k">False</span>, index=df.index)
+
+        custom_entry_price = fvg_entry_level
+        ${slChoice.includes('atr') || slChoice.includes('ATR') ? `stop_loss = custom_entry_price - (1.0 * df['atr_14'])` : (slChoice.includes('15') ? `stop_loss = custom_entry_price - 0.0015` : `stop_loss = fvg_entry_level * 0.9985`)}
+        take_profit = custom_entry_price + (np.abs(custom_entry_price - stop_loss) * <span class="syn-p">self</span>.risk_reward_ratio)
+
+        <span class="syn-c"># Order Invalidation: Cancel if TP reached before fill</span>
+        tp_hit_first = (df[<span class="syn-s">'high'</span>] &gt;= take_profit) &amp; (df[<span class="syn-s">'low'</span>] &gt; custom_entry_price)
+        entries = entries &amp; ~tp_hit_first
+
+        bar_date = df.index.to_series().dt.normalize()
+        eod_exit = bar_date != bar_date.shift(-<span class="syn-n">1</span>).fillna(bar_date)
+
+        <span class="syn-k">return</span> {
+            <span class="syn-s">'entries'</span>: entries,
+            <span class="syn-s">'short_entries'</span>: short_entries,
+            <span class="syn-s">'custom_entry_price'</span>: custom_entry_price,
+            <span class="syn-s">'stop_loss'</span>: stop_loss,
+            <span class="syn-s">'take_profit'</span>: take_profit,
+            <span class="syn-s">'exits'</span>: eod_exit <span class="syn-k">if</span> ${isEOD ? 'True' : 'False'} <span class="syn-k">else None</span>
+        }`;
+    } else {
+      return `<span class="syn-k">import</span> pandas <span class="syn-k">as</span> pd
+<span class="syn-k">import</span> numpy <span class="syn-k">as</span> np
+<span class="syn-k">from</span> indicators.session_range <span class="syn-k">import</span> calculate_session_range
+<span class="syn-k">from</span> indicators.atr <span class="syn-k">import</span> calculate_atr
+
+<span class="syn-k">class</span> <span class="syn-f">SessionBreakoutStrategy</span>:
+    <span class="syn-c">"""
+    Quantitative Strategy: Session Range Breakout Execution.
+    • Stop-Loss Model: ${slChoice}
+    • Entry Trigger: ${entryChoice}
+    • Invalidation: ${exitChoice}
+    """</span>
+    <span class="syn-k">def</span> <span class="syn-f">__init__</span>(<span class="syn-p">self</span>, <span class="syn-p">risk_reward_ratio</span>: float = <span class="syn-n">2.0</span>):
+        <span class="syn-p">self</span>.risk_reward_ratio = risk_reward_ratio
+
+    <span class="syn-k">def</span> <span class="syn-f">generate_signals</span>(<span class="syn-p">self</span>, <span class="syn-p">df</span>: pd.DataFrame) -&gt; dict:
+        df = calculate_session_range(df, start_hour=<span class="syn-n">23</span>, end_hour=<span class="syn-n">6</span>)
+        df = calculate_atr(df, window=<span class="syn-n">14</span>)
+
+        is_trading = (df.index.hour &gt;= <span class="syn-n">6</span>) &amp; (df[<span class="syn-s">'close'</span>] &gt; df[<span class="syn-s">'session_high'</span>])
+        entries = is_trading &amp; (df[<span class="syn-s">'close'</span>] &gt; df[<span class="syn-s">'open'</span>])
+        short_entries = pd.Series(<span class="syn-k">False</span>, index=df.index)
+
+        entry_price = df[<span class="syn-s">'close'</span>]
+        asian_mid = (df[<span class="syn-s">'session_high'</span>] + df[<span class="syn-s">'session_low'</span>]) / <span class="syn-n">2.0</span>
+        ${slChoice.includes('atr') || slChoice.includes('ATR') ? `stop_loss = entry_price - (1.5 * df['atr_14'])` : (slChoice.includes('low') || slChoice.includes('лой') || slChoice.includes('минимум') ? `stop_loss = df['low'].shift(1)` : `stop_loss = asian_mid`)}
+        take_profit = entry_price + (np.abs(entry_price - stop_loss) * <span class="syn-p">self</span>.risk_reward_ratio)
+
+        bar_date = df.index.to_series().dt.normalize()
+        eod_exit = bar_date != bar_date.shift(-<span class="syn-n">1</span>).fillna(bar_date)
+
+        <span class="syn-k">return</span> {
+            <span class="syn-s">'entries'</span>: entries,
+            <span class="syn-s">'short_entries'</span>: short_entries,
+            <span class="syn-s">'stop_loss'</span>: stop_loss,
+            <span class="syn-s">'take_profit'</span>: take_profit,
+            <span class="syn-s">'exits'</span>: eod_exit <span class="syn-k">if</span> ${isEOD ? 'True' : 'False'} <span class="syn-k">else None</span>
+        }`;
+    }
+  }
+
+  const getLang = () => window.__curLang || 'ru';
+
+  const homeEl = document.getElementById('scHome');
+  const chatViewEl = document.getElementById('scChatView');
+  const messagesEl = document.getElementById('scMessages');
+  const promptInput = document.getElementById('scPromptInput');
+  const inputForm = document.getElementById('scInputForm');
+  const resetTopBtn = document.getElementById('scResetTopBtn');
+  const toastEl = document.getElementById('scToast');
+
+  let activeSession = null;
+  let toastTimer = null;
+
+  function showToast(text) {
+    if (!toastEl) return;
+    toastEl.textContent = text;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toastEl.classList.remove('show'), 2500);
+  }
+
+  function resizeMockup() {
+    window.dispatchEvent(new Event('resize'));
+  }
+
+  function scrollToBottom() {
+    if (messagesEl) {
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+  }
+
+  function resetToHome() {
+    activeSession = null;
+    if (chatViewEl) chatViewEl.style.display = 'none';
+    if (homeEl) homeEl.style.display = 'flex';
+    if (messagesEl) messagesEl.innerHTML = '';
+    if (promptInput) promptInput.value = '';
+    resizeMockup();
+  }
+
+  function startChat(presetId, customText) {
+    const lang = getLang();
+    let promptStr = '';
+    if (presetId !== null && PRESETS[presetId]) {
+      const p = PRESETS[presetId];
+      promptStr = p.prompt[lang] || p.prompt.ru;
+      activeSession = {
+        type: 'preset',
+        presetId: presetId,
+        customPrompt: null,
+        promptStr: promptStr,
+        curStepIndex: 0,
+        userChoices: []
+      };
+    } else {
+      promptStr = customText || (lang === 'en' ? 'Trading strategy hypothesis' : 'Торговая стратегия');
+      activeSession = {
+        type: 'custom',
+        presetId: null,
+        customPrompt: promptStr,
+        promptStr: promptStr,
+        curStepIndex: 0,
+        userChoices: []
+      };
+    }
+
+    if (homeEl) homeEl.style.display = 'none';
+    if (chatViewEl) chatViewEl.style.display = 'flex';
+    resizeMockup();
+
+    renderChatInitial();
+  }
+
+  function renderChatInitial() {
+    if (!messagesEl || !activeSession) return;
+    const lang = getLang();
+    const userLabel = lang === 'en' ? 'Trader / User' : (lang === 'ua' ? 'Трейдер / Користувач' : 'Трейдер / Пользователь');
+    const aiLabel = 'Strategy Co-pilot';
+    const typingLabel = lang === 'en' ? 'Audit: analyzing hypothesis against risk clarification checklist...' : (lang === 'ua' ? 'Аудит: аналіз гіпотези за чеклистом контролю ризиків...' : 'Аудит: анализ гипотезы по чеклисту контроля рисков...');
+
+    messagesEl.innerHTML = `
+      <div class="sc-msg user">
+        <div class="sc-avatar">👤</div>
+        <div class="sc-bubble">
+          <div class="sc-msg-author">${userLabel}</div>
+          <div>${activeSession.promptStr}</div>
+        </div>
+      </div>
+      <div class="sc-msg ai" id="scTypingMsg">
+        <div class="sc-avatar">🤖</div>
+        <div class="sc-bubble">
+          <div class="sc-msg-author">${aiLabel}</div>
+          <div class="sc-typing">
+            <div class="sc-typing-dots"><span></span><span></span><span></span></div>
+            <span>${typingLabel}</span>
+          </div>
+        </div>
+      </div>
+    `;
+    scrollToBottom();
+    resizeMockup();
+
+    setTimeout(() => {
+      renderCurrentStep();
+    }, 600);
+  }
+
+  function getCurrentStepData() {
+    const lang = getLang();
+    if (activeSession.type === 'preset') {
+      const p = PRESETS[activeSession.presetId];
+      return p.steps[activeSession.curStepIndex];
+    } else {
+      const steps = getCustomSteps(lang);
+      return steps[activeSession.curStepIndex];
+    }
+  }
+
+  function renderCurrentStep() {
+    const typingEl = document.getElementById('scTypingMsg');
+    if (typingEl) typingEl.remove();
+
+    const lang = getLang();
+    const aiLabel = 'Strategy Co-pilot';
+    const stepData = getCurrentStepData();
+    if (!stepData) return;
+
+    const qText = stepData.question[lang] || stepData.question.ru;
+    const badgeText = stepData.badge[lang] || stepData.badge.ru;
+    const optionsList = stepData.options;
+
+    const optionsHtml = optionsList.map((o, idx) => {
+      const recBadge = o.rec ? `<span class="sc-badge" style="margin-left:6px;">${o.tag[lang] || o.tag.ru}</span>` : '';
+      return `
+        <div class="sc-opt-btn" data-opt="${idx}" role="button" tabindex="0">
+          <div class="sc-opt-btn-radio"></div>
+          <div class="sc-opt-btn-body">
+            <div class="sc-opt-btn-title">${o.title[lang] || o.title.ru} ${recBadge}</div>
+            <div class="sc-opt-btn-desc">${o.desc[lang] || o.desc.ru}</div>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    const customPh = lang === 'en' ? 'Or enter custom parameter value...' : (lang === 'ua' ? 'Або введіть власне значення...' : 'Или введите свое значение...');
+    const customBtnText = lang === 'en' ? 'Apply' : (lang === 'ua' ? 'Застосувати' : 'Применить');
+
+    const aiMsg = document.createElement('div');
+    aiMsg.className = 'sc-msg ai';
+    aiMsg.id = `scStepMsg_${activeSession.curStepIndex}`;
+    aiMsg.innerHTML = `
+      <div class="sc-avatar">🤖</div>
+      <div class="sc-bubble">
+        <div class="sc-msg-author">${aiLabel}</div>
+        <div class="sc-step-badge">${badgeText}</div>
+        <div style="margin-bottom:10px;">${qText}</div>
+        <div class="sc-clarify-wrap" id="scClarifyWrap_${activeSession.curStepIndex}">
+          ${optionsHtml}
+          <div class="sc-custom-input-row">
+            <input type="text" class="sc-custom-stop-input" placeholder="${customPh}" />
+            <button type="button" class="sc-custom-stop-btn">${customBtnText}</button>
+          </div>
+        </div>
+      </div>
+    `;
+
+    messagesEl.appendChild(aiMsg);
+    scrollToBottom();
+    resizeMockup();
+
+    aiMsg.querySelectorAll('.sc-opt-btn').forEach(btn => {
+      btn.onclick = () => {
+        const optIdx = +btn.dataset.opt;
+        const optObj = optionsList[optIdx];
+        handleStepAnswer(optIdx, optObj.title[lang] || optObj.title.ru);
+      };
+    });
+
+    const customBtn = aiMsg.querySelector('.sc-custom-stop-btn');
+    const customInput = aiMsg.querySelector('.sc-custom-stop-input');
+
+    const handleCustomSubmit = () => {
+      const val = (customInput.value || '').trim();
+      if (!val) {
+        customInput.focus();
+        return;
       }
+      handleStepAnswer(null, val);
+    };
 
-      if (btnOpt) {
-        btnOpt.onclick = () => {
-          const lang = getLang();
-          const orig = btnOpt.textContent;
-          btnOpt.disabled = true;
-          btnOpt.textContent = '⏳ Optuna...';
-          setTimeout(() => {
-            btnOpt.disabled = false;
-            btnOpt.textContent = orig;
-            const msg = lang === 'en'
-              ? '🎯 Optuna: 50 Bayesian trials completed · Optimal parameters locked'
-              : (lang === 'ua'
-                ? '🎯 Optuna: 50 байєсівських ітерацій завершено · Параметри оптимізовано'
-                : '🎯 Optuna: 50 байесовских итераций завершено · Параметры оптимизированы');
-            toast(msg);
-          }, 500);
-        };
+    if (customBtn) customBtn.onclick = handleCustomSubmit;
+    if (customInput) {
+      customInput.onkeydown = (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          handleCustomSubmit();
+        }
+      };
+    }
+  }
+
+  function handleStepAnswer(optIdx, answerText) {
+    const wrap = document.getElementById(`scClarifyWrap_${activeSession.curStepIndex}`);
+    if (wrap) {
+      wrap.querySelectorAll('.sc-opt-btn').forEach((b, i) => {
+        b.style.pointerEvents = 'none';
+        b.classList.toggle('selected', i === optIdx);
+      });
+      const cRow = wrap.querySelector('.sc-custom-input-row');
+      if (cRow) cRow.style.display = 'none';
+    }
+
+    activeSession.userChoices.push(answerText);
+
+    const lang = getLang();
+    const stepNum = activeSession.curStepIndex + 1;
+    const prefix = lang === 'en'
+      ? (stepNum === 1 ? 'Stop-Loss selected:' : (stepNum === 2 ? 'Execution confirmed:' : 'Invalidation rule locked:'))
+      : (lang === 'ua'
+        ? (stepNum === 1 ? 'Обраний Stop-Loss:' : (stepNum === 2 ? 'Виконання входу:' : 'Правило скасування:'))
+        : (stepNum === 1 ? 'Выбран Stop-Loss:' : (stepNum === 2 ? 'Исполнение входа:' : 'Правило отмены:')));
+
+    appendUserResponse(`${prefix} <b>${answerText}</b>`);
+
+    activeSession.curStepIndex++;
+
+    if (activeSession.curStepIndex < 3) {
+      renderTransitionTyping(() => {
+        renderCurrentStep();
+      });
+    } else {
+      renderFinalSynthesisTyping(() => {
+        renderFinalOutput();
+      });
+    }
+  }
+
+  function appendUserResponse(html) {
+    const lang = getLang();
+    const userLabel = lang === 'en' ? 'Trader / User' : (lang === 'ua' ? 'Трейдер / Користувач' : 'Трейдер / Пользователь');
+    const msg = document.createElement('div');
+    msg.className = 'sc-msg user';
+    msg.innerHTML = `
+      <div class="sc-avatar">👤</div>
+      <div class="sc-bubble">
+        <div class="sc-msg-author">${userLabel}</div>
+        <div>${html}</div>
+      </div>
+    `;
+    messagesEl.appendChild(msg);
+    scrollToBottom();
+    resizeMockup();
+  }
+
+  function renderTransitionTyping(onDone) {
+    const lang = getLang();
+    const aiLabel = 'Strategy Co-pilot';
+    const typingMsg = document.createElement('div');
+    typingMsg.className = 'sc-msg ai';
+    typingMsg.id = 'scStepTyping';
+    typingMsg.innerHTML = `
+      <div class="sc-avatar">🤖</div>
+      <div class="sc-bubble">
+        <div class="sc-msg-author">${aiLabel}</div>
+        <div class="sc-typing">
+          <div class="sc-typing-dots"><span></span><span></span><span></span></div>
+          <span>${lang === 'en' ? 'Locking parameter in specification...' : (lang === 'ua' ? 'Фіксую параметр у специфікації...' : 'Фиксирую параметр в спецификации...')}</span>
+        </div>
+      </div>
+    `;
+    messagesEl.appendChild(typingMsg);
+    scrollToBottom();
+    resizeMockup();
+
+    setTimeout(() => {
+      typingMsg.remove();
+      onDone();
+    }, 450);
+  }
+
+  function renderFinalSynthesisTyping(onDone) {
+    const lang = getLang();
+    const aiLabel = 'Strategy Co-pilot';
+    const genText = lang === 'en'
+      ? 'All parameters confirmed! Compiling strategy specification & validating AST code...'
+      : (lang === 'ua'
+        ? 'Всі обов’язкові параметри підтверджено! Формую специфікацію стратегії та валідую AST-код...'
+        : 'Все обязательные параметры подтверждены! Формирую спецификацию стратегии и валидирую AST-код...');
+
+    const typingMsg = document.createElement('div');
+    typingMsg.className = 'sc-msg ai';
+    typingMsg.id = 'scFinalTyping';
+    typingMsg.innerHTML = `
+      <div class="sc-avatar">🤖</div>
+      <div class="sc-bubble">
+        <div class="sc-msg-author">${aiLabel}</div>
+        <div class="sc-typing">
+          <div class="sc-typing-dots"><span></span><span></span><span></span></div>
+          <span>${genText}</span>
+        </div>
+      </div>
+    `;
+    messagesEl.appendChild(typingMsg);
+    scrollToBottom();
+    resizeMockup();
+
+    setTimeout(() => {
+      typingMsg.remove();
+      onDone();
+    }, 650);
+  }
+
+  function renderFinalOutput() {
+    const lang = getLang();
+    const aiLabel = 'Strategy Co-pilot';
+    const choices = activeSession.userChoices;
+
+    let bpObj = null;
+    let codeStr = '';
+
+    if (activeSession.type === 'preset') {
+      const pid = activeSession.presetId;
+      const p = PRESETS[pid];
+      bpObj = {
+        context: lang === 'en'
+          ? `${p.pair}. Indicator dependencies: detect_fractals & session indicators synced 1:1 with input index.`
+          : (lang === 'ua'
+            ? `${p.pair}. Залежності індикаторів: детекція фракталів та структури, синхронізована 1:1 з індексом.`
+            : `${p.pair}. Зависимости индикаторов: детекция фракталов и структуры, синхронизированная 1:1 с индексом.`),
+        entry: `${choices[1] || 'Market Order on Bar Close'}. Vectorized signal execution verified.`,
+        trade: `SL: ${choices[0] || '1.5x ATR'}. Target R/R 1:2.0 via self.risk_reward_ratio. Invalidation: ${choices[2] || 'EOD Exit 23:59 UTC'}.`
+      };
+      codeStr = buildDynamicCode(pid, choices);
+    } else {
+      bpObj = buildCustomBlueprint(activeSession.promptStr, choices, lang);
+      codeStr = buildDynamicCode(99, choices);
+    }
+
+    const bpH = lang === 'en' ? '📋 Strategy Specification (All Parameters Confirmed)' : (lang === 'ua' ? '📋 Специфікація стратегії (Всі параметри підтверджено)' : '📋 Спецификация стратегии (Все параметры подтверждены)');
+    const tSec1 = lang === 'en' ? '1. Market Context (Trend & Structure)' : (lang === 'ua' ? '1. Market Context (Тренд та структура)' : '1. Market Context (Тренд и структура)');
+    const tSec2 = lang === 'en' ? '2. Entry Setup & Execution' : (lang === 'ua' ? '2. Entry Setup (Логіка виконання)' : '2. Entry Setup (Логика исполнения)');
+    const tSec3 = lang === 'en' ? '3. Trade Management & Invalidation' : (lang === 'ua' ? '3. Trade Management (SL, TP та скасування)' : '3. Trade Management (SL, TP и отмена)');
+
+    const successMsg = lang === 'en'
+      ? `✓ <b>100% Parameter coverage achieved</b>. Risk boundary schema validated. AST parsing passed (0 forbidden calls):`
+      : (lang === 'ua'
+        ? `✓ <b>100% покриття обов'язкових параметрів ризику</b>. Схему ризику валідовано. AST перевірку пройдено:`
+        : `✓ <b>100% покрытие обязательных параметров риска</b>. Схема параметров риска валидирована. AST-проверка пройдена:`);
+
+    const copyBtnText = lang === 'en' ? 'Copy Code' : (lang === 'ua' ? 'Скопіювати код' : 'Скопировать код');
+    const restartBtnText = lang === 'en' ? '↻ Architect Another Strategy' : (lang === 'ua' ? '↻ Спроєктувати нову стратегію' : '↻ Спроектировать новую стратегию');
+
+    const msg = document.createElement('div');
+    msg.className = 'sc-msg ai';
+    msg.innerHTML = `
+      <div class="sc-avatar">🤖</div>
+      <div class="sc-bubble" style="width:100%;">
+        <div class="sc-msg-author">${aiLabel}</div>
+
+        <!-- Strategy Specification Card -->
+        <div class="sc-blueprint-card">
+          <div class="sc-bp-h">${bpH}</div>
+          <div class="sc-bp-sec">
+            <b>${tSec1}</b>
+            <p>${bpObj.context}</p>
+          </div>
+          <div class="sc-bp-sec">
+            <b>${tSec2}</b>
+            <p>${bpObj.entry}</p>
+          </div>
+          <div class="sc-bp-sec">
+            <b>${tSec3}</b>
+            <p>${bpObj.trade}</p>
+          </div>
+        </div>
+
+        <div style="color:#047857;margin-bottom:8px;font-size:12px;">${successMsg}</div>
+
+        <div class="sc-code-container">
+          <div class="sc-code-h">
+            <span>🐍 python · strategies/base.py</span>
+            <span class="sc-code-h-status">✓ AST Validated · VectorBT / Backtest Ready</span>
+            <button class="sc-copy-btn" type="button">${copyBtnText}</button>
+          </div>
+          <pre class="sc-code-body"><code>${codeStr}</code></pre>
+        </div>
+        <div class="sc-chat-reset-wrap">
+          <button class="sc-chat-restart-btn" type="button">${restartBtnText}</button>
+        </div>
+      </div>
+    `;
+    messagesEl.appendChild(msg);
+    scrollToBottom();
+    resizeMockup();
+
+    const copyBtn = msg.querySelector('.sc-copy-btn');
+    if (copyBtn) {
+      copyBtn.onclick = () => {
+        const codeEl = msg.querySelector('.sc-code-body code');
+        const rawCode = codeEl ? (codeEl.innerText || codeEl.textContent) : '';
+        navigator.clipboard.writeText(rawCode).then(() => {
+          const tCopied = lang === 'en' ? '✓ Code copied to clipboard' : (lang === 'ua' ? '✓ Код скопійовано в буфер' : '✓ Код скопирован в буфер');
+          showToast(tCopied);
+          const orig = copyBtn.textContent;
+          copyBtn.textContent = '✓ Copied!';
+          setTimeout(() => { copyBtn.textContent = orig; }, 1500);
+        }).catch(() => {
+          showToast('✓ Code ready');
+        });
+      };
+    }
+
+    const restartBtn = msg.querySelector('.sc-chat-restart-btn');
+    if (restartBtn) {
+      restartBtn.onclick = () => {
+        resetToHome();
+      };
+    }
+  }
+
+  document.querySelectorAll('.sc-pcard').forEach(card => {
+    card.onclick = () => {
+      const pid = +card.dataset.preset;
+      startChat(pid, null);
+    };
+    card.onkeydown = (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const pid = +card.dataset.preset;
+        startChat(pid, null);
       }
+    };
+  });
 
-      window.__onLang(() => render());
-      render();
-    })();
+  if (inputForm) {
+    inputForm.onsubmit = (e) => {
+      e.preventDefault();
+      const txt = (promptInput.value || '').trim();
+      if (!txt) {
+        promptInput.focus();
+        return;
+      }
+      startChat(null, txt);
+    };
+  }
+
+  if (resetTopBtn) {
+    resetTopBtn.onclick = () => {
+      resetToHome();
+    };
+  }
+
+  window.__onLang(() => {
+  });
+})();
   </script>
+
   <script>
     (() => {
       const tr = document.getElementById('tr'), vp = document.getElementById('vp'), pv = document.getElementById('pv'), nx = document.getElementById('nx');

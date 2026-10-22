@@ -7,6 +7,6 @@ Personal portfolio website and interactive engineering demos of **Serhii Hirus**
 - 💼 **LinkedIn**: [linkedin.com/in/serhii-hirus-700412403](https://www.linkedin.com/in/serhii-hirus-700412403/)
 
 ## Overview
-- **Interactive Demos**: Automated Content Creator (media pipeline) and Quant Trading Lab (VectorBT & Vertex AI simulator).
+- **Interactive Demos**: Automated Content Creator (media pipeline), Domain-Specific AI Agent (Quant Strategy Co-pilot with Socratic clarification), and AI Copilot for CRM.
 - **Multilingual Support**: Fully localized in English, Ukrainian, and Russian.
 - **Tech Stack**: HTML5, Modern CSS, Vanilla JS, Responsive Web Design.
