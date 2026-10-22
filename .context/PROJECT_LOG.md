@@ -1,15 +1,16 @@
 # Project Log: Portfolio Website (Serhii Hirus)
 
 ## Current Status & Next Steps
-- **Status**: Removed link from AI Strategy Co-pilot header; converted `hirus.systems` project attribution into clean text without border/pill frame; completely removed proprietary internal engine terminology (`Strategy Lab Engine`, `Strategy & StrategyResult`, `Strategy Blueprint`, `_generate_signals`, `sl_price`) in favor of standard algorithmic engineering concepts.
+- **Status**: Updated CV (`Serhii_Hirus_CV.pdf`) to synchronize 100% with the live portfolio site: prioritized `AI Strategy Co-pilot` (`hirus.systems`) in #1 position, updated tech stack to Claude API / AST Validation / VectorBT / FastAPI, aligned summary & skills, verified single-page layout (A4), and passed full test suite in `agent-job-finder`.
 - **Brand Palette (Apps only)**:
   - AI Strategy Co-pilot: Tech Red (`#dc2626`)
   - Automated Content Creator: Telegram Blue (`#0088cc`)
   - AI-copilot для CRM: Emerald Green (`#059669`)
 - **Local Preview**: Running on `http://localhost:8000`.
-- **Next Steps**: Await user visual inspection and feedback.
+- **Next Steps**: Await user review of the updated CV and site.
 
 ## Architectural Decisions & Changelog
+- **2026-10-22**: Synchronized `master_cv.yaml`, Typst source, and `Serhii_Hirus_CV.pdf` with the updated portfolio: prioritized AI Strategy Co-pilot (replacing Vertex AI / Quant Trading Lab with Claude API, AST validation, schema validation, < 30s turnaround, 100% risk coverage), formatted for strictly 1-page A4 ATS compliance.
 - **2026-10-22**: Removed proprietary engine jargon across descriptions, i18n, prompts, and code templates (`Strategy Lab`, `StrategyResult`, `Strategy Blueprint`, `_generate_signals`, `sl_price`) in favor of industry-standard terms (VectorBT, risk parameters, signal execution logic, Stop-Loss).
 - **2026-10-22**: Removed clickable link and arrow icon from the `AI Strategy Co-pilot` header title; removed border and background card styling from the `hirus.systems` attribution text.
 - **2026-10-22**: Returned all text styles across all 3 case slides (headings, subtitles, row titles, bold text, code tags, badge references, and tabs) to the site's default typography. Scoped custom brand colors exclusively to the respective interactive application containers (`.sc-app`, `.ph`, `.crm`).
