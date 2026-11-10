@@ -4,7 +4,7 @@ Personal portfolio website and interactive engineering demos of **Serhii Hirus**
 
 - 🌐 **Live Website**: [https://serhiihirus.github.io/portfolio-website/](https://serhiihirus.github.io/portfolio-website/)
 - 📄 **Resume / CV**: [Serhii_Hirus_CV.pdf](Serhii_Hirus_CV.pdf)
-- 💼 **LinkedIn**: [linkedin.com/in/serhii-hirus-700412403](https://www.linkedin.com/in/serhii-hirus-700412403/)
+- 💼 **LinkedIn**: [linkedin.com/in/serhii-hirus](https://www.linkedin.com/in/serhii-hirus/)
 
 ## Overview
 - **Interactive Demos**: Automated Content Creator (media pipeline), Domain-Specific AI Agent (Quant Strategy Co-pilot with Socratic clarification), and AI Copilot for CRM.
